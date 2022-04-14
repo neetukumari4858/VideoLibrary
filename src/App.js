@@ -1,13 +1,16 @@
+import { Route, Routes} from "react-router-dom";
 import "./App.css";
-import {Navbar} from "./Components/Navigation/Navbar"
-import {Sidebar} from "./Components/Sidebar/Sidebar"
-
+import { Navbar, Sidebar } from "./Components/index";
+import {VideoListing} from "./Page/index"
 
 function App() {
-  return (
+  return (  
     <div className="App">
       <Navbar/>
       <Sidebar/>
+      <Routes>
+        <Route path="/" element= {<VideoListing/>}/>
+      </Routes>
     </div>
   );
 }
