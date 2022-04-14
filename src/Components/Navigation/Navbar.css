@@ -1,0 +1,49 @@
+
+@import url("../../style.css");
+
+ .header{
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     align-items: center;
+     background-color: #202020;
+     box-shadow: 1px 1px 1px 2px var(--gainboro-color);
+     width: 100%;
+ }
+ .logo{
+     margin-left: 2rem;
+     margin-top: -1rem;
+     color:white;
+     font-size: 2rem;
+     font-size: bolder;
+ }
+ .nav-section{
+     height: 3.7rem;
+     margin-top: 1rem;
+ }
+
+ .search-bar{
+     height:2rem;
+     width: 30rem;
+     border-radius: 0.2rem;
+     margin-top: 0.6rem;
+     border: none;
+ }
+ .nav-link{
+     text-decoration: none;
+     color:var(--blue-color);
+ }
+ .outer-search-bar-div{
+     height: 2.8rem;
+     width:23rem;
+     display: flex;
+     justify-content: center;
+     margin-right: 13rem;
+     overflow-y: hidden;
+ } 
+ .login-btn{
+     position: relative;
+     left: 11rem;
+     top: -2.2rem;
+     padding: 0.5rem 1rem;
+ }

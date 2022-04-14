@@ -1,0 +1,36 @@
+
+.sidebar{
+    height: 37rem;
+    width: 14rem;
+    border: 1px solid black;
+    overflow: auto;
+    background-color: #202020;
+    overflow-x: hidden;
+}
+.sidebarItemsLink{
+    display:flex ;
+    width:  14rem;
+    text-decoration: none;
+    padding: 1rem;
+    flex-wrap: wrap;
+    font-size:1rem;
+    color: white;
+    font-weight: bolder;
+    margin-top: 0.5rem ;
+    margin-left: 1rem;
+}
+.sidebarItemsLink:hover{
+    background-color: hsla(0,0%,100%,.2);
+}
+
+.material-icons,.fa,
+.fas{
+    display: flex;
+    margin-right: 1rem;
+    color: white;
+    
+}
+
+/*  */
+
+
