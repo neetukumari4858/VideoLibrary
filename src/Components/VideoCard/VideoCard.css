@@ -1,0 +1,64 @@
+@import "./../../style.css";
+
+/* VideoCard */
+.cartContainer{
+    height:20rem;
+    width: 18rem;
+}
+.thumbnailImg{
+    height: 12rem ;
+    width: 18rem;
+}
+.cardText{
+    width: 18rem;
+    height: 6rem;
+    color: var(--white-color);
+    margin-top: -3.5rem;
+}
+.chennelProfile{
+    height: 3rem;
+    width: 3rem;
+     position: relative;
+    top: 4rem; 
+    margin-left: -14rem;
+    border-radius: 100%;
+}
+.title{
+    color:var(--white-color);
+    margin-left: 2.1rem;
+}
+.cardFooter{
+    color: var(--light-gray-color);
+    width: 18rem;
+    height: 5.2rem;
+}
+.channelName{
+    margin-top: -0.6rem;
+    margin-left: -4rem;
+}
+.view{
+    margin-top: -1.5rem;
+}
+.iconDiv{
+    height: 2rem;
+    width: 17rem;
+    display: flex;
+    position:relative;
+    top: 11.6rem;
+    justify-content: space-between;
+    margin-left: 1rem;
+}
+.VedioLength{
+    
+    display: flex;
+    align-items: center;
+}
+.icons{
+    display: flex;
+}
+.borderRadius{
+    border-radius: 100%;
+    background-color: var(--gray-color);
+    padding: 0.5rem 0.5rem;
+    align-items: center; 
+}

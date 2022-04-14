@@ -1,0 +1,25 @@
+@import url("../../style.css");
+
+.product-container{
+    height: 37rem;
+    width:67rem;
+    margin-left: 14rem;
+    margin-top: -38.5rem;
+    background-color:var(--dark-black-color) ;
+}
+.section{
+    height:31rem;
+    width: 70rem;
+    margin-left: -2rem;
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;  
+    gap: 2.2rem;
+    overflow-y: scroll;
+    justify-content: center;
+}
+.trandingVideo{
+    color:var(--white-color);
+    position: relative;
+    top: 2rem;
+}
