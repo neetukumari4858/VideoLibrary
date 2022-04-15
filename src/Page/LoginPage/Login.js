@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import "./Login.css"
 const Login = () => {
   return (
-    // <div className="outer-product-side-bar">
     <div className="outer-Login-container">
         <div className="login-outer-container">
             <div className="login-content-container">
