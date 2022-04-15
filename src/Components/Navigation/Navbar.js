@@ -12,7 +12,7 @@ const Navbar = () => {
             <div className="outer-search-bar-div">
                 <input type="text" className="search-bar" placeholder="   Search.."/>
             </div>
-            <button className='login-btn'><Link className="nav-link" to ="/">Login</Link></button> 
+            <button className='login-btn'><Link className="nav-link" to ="loginPage">Login</Link></button> 
     
         </div>
     </nav> 

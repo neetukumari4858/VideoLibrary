@@ -1,0 +1,43 @@
+@import url("../../style.css");
+
+.signup-container{
+    height: 32rem;
+    width: 23rem;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 1px 1px 2px gray;
+}
+.fa-angle-right{
+    color:var(--white-color);
+} 
+.signUp-lebel{
+    color:  var(--white-color);
+    display: flex;
+    justify-content: flex-start;
+    margin: 0.5rem 0.1rem; 
+}
+.signUp-heading{
+    color:  var(--white-color);
+}
+.sign-input{
+    width: 17rem;
+    height: 1.3rem;
+}
+.terms-and-condition{
+    color: var(--white-color);
+}
+.termsandConditions-div{
+    margin: 0.8rem 0 0 -2.7rem;
+}
+.sign-btn{
+    padding: 0.5rem 7rem;
+    border: transparent;
+    margin-top: 1rem;
+    border-radius: 0.3rem;
+    background-color: var(--red-color);
+}
+.alreadyHaveAccount{
+    color: var(--white-color);
+    font-size: 0.9rem;
+}
