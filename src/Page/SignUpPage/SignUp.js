@@ -20,53 +20,22 @@ const SignUp = () => {
                     <input type= "text" className="sign-input" placeholder="..................."/>
 
                     <label className='signUp-lebel'>Confirm Password</label>
-                    <input type= "text" className="sign-input" placeholder="..................."/>
-
-                    <input type="checkbox"/>
-                    <button className="login-btn">Sign up</button>
-                    <h4 >Already have an account ? <Link to="/LoginPage">Login Here</Link></h4>
+                    <input type= "text" className="sign-input" placeholder="..................."/><br/>
+                    <div className='termsandConditions-div'>
+                        <input type="checkbox" id='termsAndCondition'/> 
+                        <lebel htmlFor="termsAndCondition" className='terms-and-condition'>I accept all Terms & Conditions</lebel>
+                    </div>
+                    
+                    <button className="sign-btn">Sign up</button>
+                    <h4 className='alreadyHaveAccount' >Already have an account? <Link to="/LoginPage" className='forgotPassword'> Login Here</Link></h4>
                 </div>
             </div>
         </div>
     )
 }
 export {SignUp}
-{/* <p className='terms-and-condition'>I accept all Terms & Conditions</p> */}
 
 
 
 
 
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import "./SignUp.css";
-// const SignUp = () => {
-//     return (
-//          <div className="outer-product-side-bar">
-//             <div className="signup-container">
-//                 <div className="login-content">
-//                     <h2>Sign up</h2>
-//                     <label>First Name</label><br/>
-//                     <input type= "text" className="sign-input" placeholder="Enter your Name"/><br/>
-
-//                     <label>Last Name</label><br></br>
-//                     <input type= "text" className="user-input" placeholder="Enter your Last Name"/><br/>
-
-//                     <label>Email address</label><br></br>
-//                     <input type= "text" className="user-input" placeholder="annu@neog.com"/><br/>
-
-//                     <label>Password</label><br></br>
-//                     <input type= "text" className="user-input" placeholder="..................."/><br/>
-
-//                     <label>Confirm Password</label><br></br>
-//                     <input type= "text" className="user-input" placeholder="..................."/><br></br>
-
-//                     <input type="checkbox"/>I accept all Terms & Conditions
-//                     <button className="login-btn">Sign up</button>
-//                     <h4>Already have an account ? <Link to="/LoginPage">Login Here</Link></h4>
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }
-// export {SignUp}

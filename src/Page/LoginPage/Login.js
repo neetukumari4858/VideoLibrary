@@ -14,8 +14,9 @@ const Login = () => {
                 <label className='lebel-text'>Password</label>
                 <input className="user-input" placeholder="..................."/>
                 <div className='forgotPasswodText'>
-                  <input type="checkbox"/> Remember me 
-                  <Link to ="/SignUpPage">Forgot Password ?</Link>
+                  <input type="checkbox" id="rememberMe" />
+                  <lebel htmlFor="rememberMe" className="remember-me">Remember me </lebel>
+                  <Link to ="/SignUpPage" className='forgotPassword'>Forgot Password ?</Link>
                 </div>
                
                 <button className="videologin-btn

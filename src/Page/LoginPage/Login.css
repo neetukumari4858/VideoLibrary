@@ -62,3 +62,9 @@
     margin: 0.7rem;
 }
 
+.remember-me{
+    margin-left: -4rem;
+}
+.forgotPassword{
+    color: #288cfb;
+}
