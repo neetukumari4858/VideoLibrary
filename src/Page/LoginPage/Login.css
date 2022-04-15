@@ -66,5 +66,5 @@
     margin-left: -4rem;
 }
 .forgotPassword{
-    color: #288cfb;
+    color:var(--blue-color);
 }
