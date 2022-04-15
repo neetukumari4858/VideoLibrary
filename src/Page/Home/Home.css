@@ -1,0 +1,26 @@
+@import url("../../style.css");
+.home-image{
+    height: 20rem;
+    width: 50rem;
+}
+.home-img-container{
+    height: 23rem;
+    width: 65rem;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.outer-Home-container{
+    height: 37.2rem;
+    width:67rem;
+    margin: -37.2rem 0 0 14rem;
+    background-color:var(--dark-black-color) ;
+}
+.mustWatch{
+    color: var(--white-color);
+    margin-left: 2rem;
+    /* text-align: center; */
+}
