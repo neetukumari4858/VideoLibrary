@@ -9,7 +9,7 @@ function App() {
       <Navbar/>
       <Sidebar/>
       <Routes>
-        <Route path="/" element= {<VideoListing/>}/>
+        <Route path="/VideoListing" element= {<VideoListing/>}/>
       </Routes>
     </div>
   );
