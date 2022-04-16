@@ -20,24 +20,24 @@
     width: 3rem;
      position: relative;
     top: 4rem; 
-    margin-left: -14rem;
     border-radius: 100%;
 }
 .title{
     color:var(--white-color);
-    margin-left: 2.1rem;
+    margin-left: rem;
+    font-size: 0.9rem;
 }
 .cardFooter{
     color: var(--light-gray-color);
-    width: 18rem;
-    height: 5.2rem;
+    width: 14rem;
+    height: 5.4rem;
+    margin-left: 3.7rem;
 }
 .channelName{
-    margin-top: -0.6rem;
-    margin-left: -4rem;
+    margin-top: -0.4rem;
 }
 .view{
-    margin-top: -1.5rem;
+    margin-top: -1.3rem;
 }
 .iconDiv{
     height: 2rem;
