@@ -29,6 +29,12 @@
     margin-right: 1rem;
     color: var(--white-color); 
 }
+.fa-home{
+    
+    position: relative;
+    left:0.1rem;
+    top: 0.1rem;
+}
 
 
 
