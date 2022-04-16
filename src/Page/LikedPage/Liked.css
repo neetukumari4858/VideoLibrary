@@ -1,0 +1,15 @@
+@import url("../../style.css");
+
+.Liked-Page-container{
+    height: 37rem;
+    width:67rem;
+    margin-left: 14rem;
+    margin-top: -38.5rem;
+    background-color:var(--dark-black-color);
+}
+.Liked{
+    color: var(--white-color);
+    text-align: center;
+    position: relative;
+    top: 2rem; 
+}

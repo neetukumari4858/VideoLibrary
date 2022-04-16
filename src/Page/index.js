@@ -2,4 +2,5 @@ export {VideoListing} from "./VideoListing/VideoListing"
 export {Login} from "./LoginPage/Login";
 export {SignUp} from "./SignUpPage/SignUp";
 export {Home} from "./Home/Home";
-export {WatchList} from "./WatchList/WatctList"
+export {WatchList} from "./WatchList/WatctList";
+export {Liked} from "./LikedPage/Liked";
