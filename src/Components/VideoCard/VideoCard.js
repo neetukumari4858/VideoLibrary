@@ -15,11 +15,11 @@ const VideoCard=({_id,videoLength,thumbnail,chennelProfile,title,chennelName,vie
             <img  className="thumbnailImg" src={thumbnail} alt="videoImg"/>
             <div className="cardText">
                 <img  className="chennelProfile" src={chennelProfile} alt="profileImg"/>
-                <div className="cardFooter" >
+                 <div className="cardFooter" >
                     <p  className="title">{title}</p>
                     <h5 className="channelName">{chennelName}</h5>
                     <h5 className="view">{view}</h5>
-                </div>
+                </div> 
             </div>
         </div>
     )

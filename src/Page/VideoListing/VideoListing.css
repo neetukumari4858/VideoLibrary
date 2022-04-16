@@ -22,4 +22,9 @@
     color:var(--white-color);
     position: relative;
     top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.loading{
+    color:var(--white-color);
 }
