@@ -1,5 +1,7 @@
 import "./VideoCard.css"
 const VideoCard=({_id,videoLength,thumbnail,chennelProfile,title,chennelName,view})=>{
+    console.log(_id,videoLength,thumbnail,chennelProfile,title,chennelName,view)
+
     return (
         <div className="cartContainer" key={_id}>
             <div className="iconDiv">

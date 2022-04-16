@@ -10,7 +10,7 @@ const Home=()=>{
            
             <h2 className="mustWatch">Must Watch</h2>
             {/* <div className="sectiono"> */}
-                {/* <VideoCard/> */}
+                <VideoCard/>
             {/* </div> */}
             
 
