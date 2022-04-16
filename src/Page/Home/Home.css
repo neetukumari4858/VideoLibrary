@@ -1,7 +1,7 @@
 @import url("../../style.css");
 .home-image{
     height: 20rem;
-    width: 50rem;
+    width: 58rem;
 }
 .home-img-container{
     height: 23rem;
@@ -11,7 +11,6 @@
     justify-content: center;
     align-items: center;
 }
-
 
 .outer-Home-container{
     height: 37.2rem;
