@@ -1,17 +1,34 @@
 import { useWatchlist } from "../../Context/watchLaterContext"
 import "./VideoCard.css"
 import { Link } from "react-router-dom";
+import { useLiked } from "../../Context/LikedContext";
 const VideoCard = ({ _id, videoLength, thumbnail, chennelProfile, title, chennelName, view }) => {
 
     const { watchlistState, watchlistDispatch } = useWatchlist();
     const { watchListVideos } = watchlistState
 
+    const { likedState, likedDispatch } = useLiked();
+    const { likedVideos } = likedState
     return (
         <div className="cartContainer" key={_id}>
             <div className="iconDiv">
                 <p className="VedioLength">{videoLength}</p>
                 <div className="icons">
-                     <i className="fa fa-thumbs-up borderRadius"></i>
+                    {likedVideos.find((item) => item._id === _id) ? (
+                        <Link to="/LikedPage"></Link>
+                    ) : (
+                        <i onClick={() => likedDispatch({
+                            type: "ADD_TO_LIKED", payload: {
+                                _id: _id,
+                                videoLength: videoLength,
+                                thumbnail: thumbnail,
+                                chennelProfile: chennelProfile,
+                                title: title,
+                                chennelName: chennelName,
+                                view: view
+                            }
+                        })} className="fa fa-thumbs-up borderRadius"></i>
+                    )}
                     {watchListVideos.find((item) => item._id === _id) ? (
                         <Link to="/WatchLater"></Link>
                     ) : (
@@ -27,7 +44,6 @@ const VideoCard = ({ _id, videoLength, thumbnail, chennelProfile, title, chennel
                             }
                         })} className="fa fa-clock-o borderRadius"></i>
                     )}
-
                     <i className='fas fa-sliders-h borderRadius'></i>
                 </div>
             </div>
