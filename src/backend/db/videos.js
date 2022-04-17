@@ -2,10 +2,10 @@
  * Videos Database can be added here.
  * You can add videos of your wish with different attributes
  * */
- import { v4 as uuidv4 } from 'uuid';
+ import { v4 as uuid } from 'uuid';
 export const videos = [
   {
-    _id:uuidv4(),
+    _id:uuid(),
     title: "How to tie your shoelaces Shoelace Style see now  ??",
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
@@ -17,7 +17,7 @@ export const videos = [
     view:"245 views 10 month ago"
   },
   {
-    _id: uuidv4(),
+    _id: uuid(),
     title: "How to tie your shoelaces Shoelace Style see now  ??",
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
@@ -29,7 +29,7 @@ export const videos = [
     view:"245 views 10 month ago"
   },
   {
-    _id: uuidv4(),
+    _id: uuid(),
     title: "How to tie your shoelaces Shoelace Style see now  ??",
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
@@ -41,7 +41,7 @@ export const videos = [
     view:"245 views 10 month ago"
   },
   {
-    _id: uuidv4(),
+    _id: uuid(),
     title: "How to tie your shoelaces Shoelace Style see now  ??",
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
@@ -53,7 +53,7 @@ export const videos = [
     view:"245 views 10 month ago"
   },
   {
-    _id: uuidv4(),
+    _id: uuid(),
     title: "How to tie your shoelaces Shoelace Style see now  ??",
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
@@ -65,7 +65,7 @@ export const videos = [
     view:"245 views 10 month ago"
   },
   {
-    _id: uuidv4(),
+    _id: uuid(),
     title: "How to tie your shoelaces Shoelace Style see now  ??",
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
@@ -77,7 +77,7 @@ export const videos = [
     view:"245 views 10 month ago"
   },
   {
-    _id: uuidv4(),
+    _id: uuid(),
     title: "How to tie your shoelaces Shoelace Style see now  ??",
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
@@ -89,7 +89,7 @@ export const videos = [
     view:"245 views 10 month ago"
   },
   {
-    _id: uuidv4(),
+    _id: uuid(),
     title: "How to tie your shoelaces Shoelace Style see now  ??",
     description:
       "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",

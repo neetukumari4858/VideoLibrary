@@ -1,7 +1,7 @@
 import "./WatchList.css";
 import { useWatchlist } from "../../Context/watchLaterContext";
 const WatchList=()=>{
-    const {watchlistState} = useWatchlist();
+    const {watchlistState ,watchlistDispatch} = useWatchlist();
     const { watchListVideos }=watchlistState;
     
 
@@ -16,7 +16,7 @@ const WatchList=()=>{
                                 <p  className="VedioLength">{videoLength}</p>
                                 <div className="icons">
                                     <i className="fa fa-thumbs-up borderRadius"></i>
-                                    <i className="fa fa-clock-o borderRadius"></i>
+                                    <i  onClick={() =>  watchlistDispatch({ type: "REMOVE_From_WatchList", payload: { _id: _id } })} className="fa fa-clock-o borderRadius"></i>
                                     <i className='fas fa-sliders-h borderRadius'></i>
                                 </div>
                             </div>
