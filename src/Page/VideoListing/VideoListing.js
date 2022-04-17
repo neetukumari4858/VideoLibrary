@@ -23,15 +23,17 @@ const VideoListing=()=>{
                 <h3 className="loading">{loading}</h3>
                 {productsData.map(({_id,title,videoLength,thumbnail,chennelProfile,chennelName,view})=>{
                     return(
-                        <VideoCard
-                        key={_id}
-                        title={title}
-                        videoLength={videoLength}
-                        thumbnail={thumbnail}
-                        chennelProfile={chennelProfile}
-                        chennelName={chennelName}
-                        view={view}
-                        />
+                        <div key={_id}>
+                            <VideoCard
+                            _id={_id}
+                            title={title}
+                            videoLength={videoLength}
+                            thumbnail={thumbnail}
+                            chennelProfile={chennelProfile}
+                            chennelName={chennelName}
+                            view={view}
+                            />
+                        </div>
                     )
                 })}
             </div>

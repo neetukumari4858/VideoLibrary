@@ -1,48 +1,39 @@
 import "./WatchList.css";
+import { useWatchlist } from "../../Context/watchLaterContext";
 const WatchList=()=>{
+    const {watchlistState ,watchlistDispatch} = useWatchlist();
+    const { watchListVideos }=watchlistState;
+    
+
     return (
         <div className="WatchList-Page-container">
             <h1  className="WatchLater"> Watch Later</h1>
-            <div className="section">    
-                <div className="cartContainer">
-                    <div className="iconDiv">
-                        <p  className="VedioLength">7:50</p>
-                        <div className="icons">
-                            <i className="fa fa-thumbs-up borderRadius"></i>
-                            <i className="fa fa-clock-o borderRadius"></i>
-                            <i className='fas fa-sliders-h borderRadius'></i>
+            <div className="section"> 
+                {watchListVideos.map(({_id,videoLength, thumbnail,chennelProfile,title,chennelName,view})=>{
+                    return(
+                        <div className="cartContainer" key={_id}>
+                            <div className="iconDiv">
+                                <p  className="VedioLength">{videoLength}</p>
+                                <div className="icons">
+                                    <i className="fa fa-thumbs-up borderRadius"></i>
+                                    <i  onClick={() =>  watchlistDispatch({ type: "REMOVE_From_WatchList", payload: { _id: _id } })} className="fa fa-clock-o borderRadius"></i>
+                                    <i className='fas fa-sliders-h borderRadius'></i>
+                                </div>
+                            </div>
+                            <img  className="thumbnailImg" src={thumbnail} alt="videoImg"/>
+                            <div className="cardText">
+                                <img  className="chennelProfile" src={chennelProfile} alt="profileImg"/>
+                                <div className="cardFooter" >
+                                    <p  className="title">{title}</p>
+                                    <h5 className="channelName">{chennelName}</h5>
+                                    <h5 className="view">{view}</h5>
+                                </div> 
+                            </div>
                         </div>
-                    </div>
-                    <img  className="thumbnailImg" src="https://ak.picdn.net/shutterstock/videos/1057495222/thumb/1.jpg?ip=x480" alt="videoImg"/>
-                    <div className="cardText">
-                        <img  className="chennelProfile" src="https://i.ebayimg.com/images/g/uhkAAOSwTM5Yvo4B/s-l300.jpg" alt="profileImg"/>
-                        <div className="cardFooter" >
-                            <p  className="title">How to tie your shoelaces Shoelace Style see now  ??</p>
-                            <h5 className="channelName">channelName</h5>
-                            <h5 className="view">245 views 10 month ago"</h5>
-                        </div> 
-                    </div>
-                </div>
+                    )
+
+                })}   
                 
-                <div className="cartContainer">
-                    <div className="iconDiv">
-                        <p  className="VedioLength">7:50</p>
-                        <div className="icons">
-                            <i className="fa fa-thumbs-up borderRadius"></i>
-                            <i className="fa fa-clock-o borderRadius"></i>
-                            <i className='fas fa-sliders-h borderRadius'></i>
-                        </div>
-                    </div>
-                    <img  className="thumbnailImg" src="https://ak.picdn.net/shutterstock/videos/1057495222/thumb/1.jpg?ip=x480" alt="videoImg"/>
-                    <div className="cardText">
-                        <img  className="chennelProfile" src="https://i.ebayimg.com/images/g/uhkAAOSwTM5Yvo4B/s-l300.jpg" alt="profileImg"/>
-                        <div className="cardFooter" >
-                            <p  className="title">How to tie your shoelaces Shoelace Style see now  ??</p>
-                            <h5 className="channelName">channelName</h5>
-                            <h5 className="view">245 views 10 month ago"</h5>
-                        </div> 
-                    </div>
-                </div>
             </div>
         </div>
     )
