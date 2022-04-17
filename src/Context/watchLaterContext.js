@@ -11,6 +11,5 @@ const WatchlistContextProvider=({children})=>{
     return <WatchlistContext.Provider value={{watchlistState,watchlistDispatch}}>
         {children}
     </WatchlistContext.Provider>
-
 }
 export {useWatchlist,WatchlistContextProvider};
