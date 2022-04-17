@@ -11,11 +11,10 @@ const VideoCard = ({ _id, videoLength, thumbnail, chennelProfile, title, chennel
             <div className="iconDiv">
                 <p className="VedioLength">{videoLength}</p>
                 <div className="icons">
-
+                     <i className="fa fa-thumbs-up borderRadius"></i>
                     {watchListVideos.find((item) => item._id === _id) ? (
                         <Link to="/WatchLater"></Link>
                     ) : (
-
                         <i onClick={() => watchlistDispatch({
                             type: "ADD_TO_WATCHLIST", payload: {
                                 _id: _id,
