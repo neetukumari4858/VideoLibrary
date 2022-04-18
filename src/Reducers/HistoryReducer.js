@@ -1,6 +1,6 @@
 const HistoryReducer=(HistoryState,action)=>{
     const {HistoryVideos} =HistoryState;
-    const HistoryItem = HistoryVideos.find((HistoryPageItems) => HistoryPageItems._id === action.payload._id,)
+    const HistoryItem = HistoryVideos.find((HistoryPageItems) => HistoryPageItems._id === action.payload)
     switch (action.type) {
         case "ADD_TO_HISTORY":
             if (HistoryItem){
