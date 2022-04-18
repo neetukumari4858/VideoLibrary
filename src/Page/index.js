@@ -4,3 +4,4 @@ export {SignUp} from "./SignUpPage/SignUp";
 export {Home} from "./Home/Home";
 export {WatchList} from "./WatchList/WatctList";
 export {Liked} from "./LikedPage/Liked";
+export {History} from "./History/History";
