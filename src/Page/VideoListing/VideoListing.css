@@ -9,12 +9,12 @@
 }
 .section{
     height:31rem;
-    width: 70rem;
-    margin-left: -2rem;
+    width: 73rem;
+    margin-left: -4rem;
     margin-top: 3rem;
     display: flex;
     flex-wrap: wrap;  
-    gap: 2.2rem;
+    gap: 2rem;
     overflow-y: scroll;
     justify-content: center;
 }

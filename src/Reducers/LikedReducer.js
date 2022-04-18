@@ -9,7 +9,7 @@ const likedReducer=(likedState,action)=>{
             }else {
             }
             return {...likedState, likedVideos:[...likedVideos,{...action.payload}]};
-        case "REMOVE_From_LIKED":
+        case "REMOVE_FROM_LIKED":
         return {
             ...likedState,
             likedVideos: [...likedVideos.filter((removeItem) => removeItem._id !== action.payload._id)]

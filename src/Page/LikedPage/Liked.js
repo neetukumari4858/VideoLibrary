@@ -20,7 +20,7 @@ const Liked = () => {
                             <div className="iconDiv">
                                 <p className="VedioLength">{videoLength}</p>
                                 <div className="icons">
-                                    <i onClick={() => likedDispatch({ type: "REMOVE_From_LIKED", payload: { _id: _id } })} className="fa fa-thumbs-up borderRadius"></i>
+                                    <i onClick={() => likedDispatch({ type: "REMOVE_FROM_LIKED", payload: { _id: _id } })} className="fa fa-thumbs-up borderRadius"></i>
                                     {watchListVideos.find((item) => item._id === _id) ? (
                                         <Link to="/WatchLater"></Link>
                                     ) : (

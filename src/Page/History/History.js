@@ -1,13 +1,15 @@
 import "./History.css"
-import { useHistory} from "../../Context/HistoryContext";
+import { useHistory } from "../../Context/HistoryContext";
 
 const History = () => {
     const { HistoryState, HistoryDispatch } = useHistory();
-    const { HistoryVideos } = HistoryState; 
-
+    const { HistoryVideos } = HistoryState;
     return (
         <div className="History-Page-container">
-            <h1 className="History">History Videos</h1>
+            <div className="history-header">
+                <h1 className="History">History Videos</h1>
+                <button className="clear-btn" onClick={() => HistoryDispatch({ type: "CLEAR_ALL" })}>CLEAR  FULL HISTORY</button>
+            </div>
             <div className="section">
                 {HistoryVideos.map(({ _id, videoLength, thumbnail, chennelProfile, title, chennelName, view }) => {
                     return (
@@ -15,7 +17,7 @@ const History = () => {
                             <div className="iconDiv">
                                 <p className="VedioLength">{videoLength}</p>
                                 <div className="icons">
-                                    <i className='fas fa-sliders-h borderRadius'></i>
+                                    <i onClick={() => HistoryDispatch({ type: "REMOVE_FROM_HISTORY", payload: { _id: _id } })} className='fa fa-trash-o borderRadius'></i>
                                 </div>
                             </div>
                             <img className="thumbnailImg" src={thumbnail} alt="videoImg" />
