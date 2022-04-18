@@ -2,6 +2,8 @@ import { useWatchlist } from "../../Context/watchLaterContext"
 import "./VideoCard.css"
 import { Link } from "react-router-dom";
 import { useLiked } from "../../Context/LikedContext";
+import {useHistory} from "../../Context/HistoryContext";
+
 const VideoCard = ({ _id, videoLength, thumbnail, chennelProfile, title, chennelName, view }) => {
 
     const { watchlistState, watchlistDispatch } = useWatchlist();
@@ -9,8 +11,25 @@ const VideoCard = ({ _id, videoLength, thumbnail, chennelProfile, title, chennel
 
     const { likedState, likedDispatch } = useLiked();
     const { likedVideos } = likedState
+
+    const {HistoryState,HistoryDispatch } = useHistory();
+    const {HistoryVideos } =HistoryState;
+
     return (
-        <div className="cartContainer" key={_id}>
+        <>
+        { HistoryVideos.find((item) => item._id ===_id) ? (
+            <Link to="/HistoryPage"></Link>
+        ):
+        (<div onClick={()=>HistoryDispatch({
+            type:"ADD_TO_HISTORY", payload: {
+                _id: _id,
+                videoLength: videoLength,
+                thumbnail: thumbnail,
+                chennelProfile: chennelProfile,
+                title: title,
+                chennelName: chennelName,
+                view: view}
+            })} className="cartContainer" key={_id}>
             <div className="iconDiv">
                 <p className="VedioLength">{videoLength}</p>
                 <div className="icons">
@@ -56,7 +75,9 @@ const VideoCard = ({ _id, videoLength, thumbnail, chennelProfile, title, chennel
                     <h5 className="view">{view}</h5>
                 </div>
             </div>
-        </div>
+        </div>)}
+        </>
     )
+
 }
 export { VideoCard }

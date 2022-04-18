@@ -1,4 +1,4 @@
-import {Home,VideoListing ,Login ,SignUp,WatchList,Liked} from "./../Page/index"
+import {Home,VideoListing ,Login ,SignUp,WatchList,Liked,History} from "./../Page/index"
 import { Route, Routes} from "react-router-dom";
 
 const AppRouter=()=>{
@@ -9,6 +9,7 @@ const AppRouter=()=>{
             <Route path="/VideoListing" element= {<VideoListing/>}/>
             <Route path="/WatchLater" element= {<WatchList/>}/>
             <Route path="/LikedPage" element= {<Liked/>}/>
+            <Route path="/HistoryPage" element= {<History/>}/>
             <Route path="/loginPage" element= {<Login/>}/>
             <Route path="/SignUpPage" element= {<SignUp/>}/>
         </Routes>
