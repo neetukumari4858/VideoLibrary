@@ -15,6 +15,8 @@ const VideoCard = ({ _id, videoLength, thumbnail, chennelProfile, title, chennel
     const {HistoryState,HistoryDispatch } = useHistory();
     const {HistoryVideos } =HistoryState;
 
+    const [openModel,setOpenModel]=useState(false)
+
     return (
         <>
         { HistoryVideos.find((item) => item._id ===_id) ? (
@@ -63,7 +65,7 @@ const VideoCard = ({ _id, videoLength, thumbnail, chennelProfile, title, chennel
                             }
                         })} className="fa fa-clock-o borderRadius"></i>
                     )}
-                    <i onClick={()=>} className='fas fa-sliders-h borderRadius'></i>
+                    <i onClick={()=>modelDispatch({type:"OPEN_MODEL"})} className='fas fa-sliders-h borderRadius'></i>
                 </div>
             </div>
             <img className="thumbnailImg" src={thumbnail} alt="videoImg" />
