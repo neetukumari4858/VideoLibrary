@@ -5,8 +5,8 @@ const HistoryReducer=(HistoryState,action)=>{
         case "ADD_TO_HISTORY":
             if (HistoryItem){
                 return {...HistoryState}
-            }else {
             }
+            
             return {...HistoryState, HistoryVideos:[...HistoryVideos,{...action.payload}]};
         case "REMOVE_FROM_HISTORY":
         return {

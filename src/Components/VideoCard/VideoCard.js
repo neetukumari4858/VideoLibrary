@@ -3,6 +3,8 @@ import "./VideoCard.css"
 import { Link } from "react-router-dom";
 import { useLiked } from "../../Context/LikedContext";
 import {useHistory} from "../../Context/HistoryContext";
+import { useModel } from "./../../Context/ModelContext"
+import { Model } from "../Model/Model";
 
 const VideoCard = ({ _id, videoLength, thumbnail, chennelProfile, title, chennelName, view }) => {
 
@@ -15,7 +17,8 @@ const VideoCard = ({ _id, videoLength, thumbnail, chennelProfile, title, chennel
     const {HistoryState,HistoryDispatch } = useHistory();
     const {HistoryVideos } =HistoryState;
 
-    const [openModel,setOpenModel]=useState(false)
+    const {modelState,modeldispatch}=useModel()
+    const {openCloseModel}=modelState;
 
     return (
         <>
@@ -65,7 +68,8 @@ const VideoCard = ({ _id, videoLength, thumbnail, chennelProfile, title, chennel
                             }
                         })} className="fa fa-clock-o borderRadius"></i>
                     )}
-                    <i onClick={()=>modelDispatch({type:"OPEN_MODEL"})} className='fas fa-sliders-h borderRadius'></i>
+                    <i onClick={()=>modeldispatch({type:"MODEL",payload:true})} className='fas fa-sliders-h borderRadius'></i>
+                    { openCloseModel && <Model/>}
                 </div>
             </div>
             <img className="thumbnailImg" src={thumbnail} alt="videoImg" />

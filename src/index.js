@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import {WatchlistContextProvider} from "./Context/watchLaterContext"
 import {LikedContextProvider} from "./Context/LikedContext";
 import {HistoryContextProvider} from "./Context/HistoryContext";
+import {ModelContextProvider} from "./Context/ModelContext";
 // Call make Server
 makeServer();
 
@@ -16,7 +17,9 @@ ReactDOM.render(
       <WatchlistContextProvider>
         <LikedContextProvider>
           <HistoryContextProvider>
-            <App />
+            <ModelContextProvider>
+              <App />
+            </ModelContextProvider>
           </HistoryContextProvider>
         </LikedContextProvider>
       </WatchlistContextProvider>
