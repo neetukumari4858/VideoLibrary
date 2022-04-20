@@ -1,6 +1,38 @@
 .close {
-    height: 7rem;
-    width: 10rem;
-    border: 1px solid red;
-  }
-  
+  height: 9rem;
+  width: 14rem;
+  /* border: 1px solid red; */
+  position:  fixed;
+  left: 45%;
+  top: 50%;
+  transform: translate(-50% ,-50%);
+  z-index: 1;
+  color: white;
+  background-color:rgb(43, 41, 41);
+  border-radius: 0.3rem;
+}
+.ModelDiv{
+  height: 2rem;
+  width: 13rem;
+  margin-left: 0.4rem;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+.playlistInput{
+   height: 3rem;
+   width:13.5rem ;
+   color: white;
+   margin-top: -0.5rem;
+   /* border: 1px solid red; */
+   background-color:rgb(43, 41, 41) ;
+
+}
+.createText{
+  display: flex;
+  width: 13rem;
+  cursor: pointer;
+  justify-content: flex-end;
+}

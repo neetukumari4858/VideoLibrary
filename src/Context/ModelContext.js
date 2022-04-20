@@ -4,7 +4,7 @@ import { ModelReducer  } from "./../Reducers/ModelReducer";
 const ModelContext = createContext();
 const useModel = () => useContext(ModelContext);
 const ModelContextProvider = ({ children }) => {
-  const [modelState, modeldispatch] = useReducer( ModelReducer, { openCloseModel: false });
+  const [modelState, modeldispatch] = useReducer( ModelReducer, { openCloseModel: false ,createBox:[]});
   return (
     <ModelContext.Provider value={{ modelState, modeldispatch}}>
       {children}
