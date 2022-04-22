@@ -1,14 +1,14 @@
-const ModelReducer = (modelState, action) => {
+const ModalReducer = (ModalState, action) => {
     switch (action.type) {
-        case "MODEL":
+        case "Modal":
             return {
-                ...modelState,
-                openCloseModel: action.payload
+                ...ModalState,
+                openCloseModal: action.payload
             };
         default:
             return {
-                modelState
+                ModalState
             };
     }
 };
-export { ModelReducer };
+export { ModalReducer };

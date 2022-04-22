@@ -1,14 +1,14 @@
 import { createContext, useContext, useReducer } from "react";
-import { ModelReducer  } from "./../Reducers/ModelReducer";
+import { ModalReducer  } from "./../Reducers/ModelReducer"
 
-const ModelContext = createContext();
-const useModel = () => useContext(ModelContext);
-const ModelContextProvider = ({ children }) => {
-  const [modelState, modeldispatch] = useReducer( ModelReducer, { openCloseModel: false ,createBox:[]});
+const ModalContext = createContext();
+const useModal = () => useContext(ModalContext);
+const ModalContextProvider = ({ children }) => {
+  const [ModalState, Modaldispatch] = useReducer( ModalReducer, { openCloseModal: false });
   return (
-    <ModelContext.Provider value={{ modelState, modeldispatch}}>
+    <ModalContext.Provider value={{ ModalState, Modaldispatch}}>
       {children}
-    </ModelContext.Provider>
+    </ModalContext.Provider>
   );
 };
-export { useModel, ModelContextProvider };
+export { useModal, ModalContextProvider };

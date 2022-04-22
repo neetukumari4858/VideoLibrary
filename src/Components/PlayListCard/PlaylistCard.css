@@ -1,0 +1,25 @@
+@import "./../../style.css";
+
+.playlistCard{
+   height:  5rem;
+   width:16rem;
+   border: 1px solid white;
+   display: flex; 
+   justify-content: center;
+   background-color:var(  --gray-text-color);
+}
+.PlaylistCard{
+    color: white;
+}
+.cardTitle{
+    margin:-1.5rem 0 0 5rem;
+}
+.videoLength{
+    margin:3rem  0 0 -14rem;
+}
+.delete-icon-and-text{
+    display: flex;
+    width: 15rem;
+    height: 3rem;
+    align-items:center ;
+}

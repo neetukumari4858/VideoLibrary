@@ -1,15 +1,15 @@
 import "./App.css";
 import { Navbar, Sidebar } from "./Components/index";
 import { AppRouter } from "./Routes/AppRouter";
-import { Model } from "./Components/Model/Model";
-import {useModel} from "./Context/ModelContext";
+import { Modal } from "./Components/Modal/Modal";
+import {useModal} from "./Context/ModelContext"
 
 function App() {
-  const  {modelState} = useModel()
-  const {openCloseModel}=modelState
+  const  {ModalState} = useModal()
+  const {openCloseModal}=ModalState
   return ( 
      <>
-      {openCloseModel && <Model />}
+      {openCloseModal && <Modal />}
       <div className="App">
         <Navbar/>
         <Sidebar/>

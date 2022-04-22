@@ -5,3 +5,4 @@ export {Home} from "./Home/Home";
 export {WatchList} from "./WatchList/WatctList";
 export {Liked} from "./LikedPage/Liked";
 export {History} from "./History/History";
+export {Playlist} from "./PlayList/Playlist";

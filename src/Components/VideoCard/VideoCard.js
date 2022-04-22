@@ -2,16 +2,16 @@ import { useWatchlist } from "../../Context/watchLaterContext"
 import "./VideoCard.css"
 import { useLiked } from "../../Context/LikedContext";
 import { useHistory } from "../../Context/HistoryContext";
-import { useModel } from "./../../Context/ModelContext"
-import { Model } from "../Model/Model";
+import { useModal } from "./../../Context/ModelContext"
+
 
 const VideoCard = ({ _id, videoLength, thumbnail, chennelProfile, title, chennelName, view }) => {
 
     const { watchlistDispatch } = useWatchlist();
     const { likedDispatch } = useLiked();
     const { HistoryDispatch } = useHistory();
-    const { modelState, modeldispatch } = useModel()
-    const { openCloseModel } = modelState;
+    const {  Modaldispatch } = useModal()
+
 
     return (
         <>
@@ -53,9 +53,8 @@ const VideoCard = ({ _id, videoLength, thumbnail, chennelProfile, title, chennel
                                 }
                             })} className="fa fa-clock-o borderRadius"></i>
                         
-                        <i onClick={() => modeldispatch({ type: "MODEL", payload: true })} className='fas fa-sliders-h borderRadius'></i>
+                        <i onClick={() => Modaldispatch({ type: "Modal", payload: true })} className='fas fa-sliders-h borderRadius'></i>
                     </div>
-                    {/* {openCloseModel && <Model />} */}
                 </div>
                 <img className="thumbnailImg" src={thumbnail} alt="videoImg" />
                 <div className="cardText">
