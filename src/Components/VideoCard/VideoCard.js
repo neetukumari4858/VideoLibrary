@@ -5,13 +5,13 @@ import { useHistory } from "../../Context/HistoryContext";
 import { useModal } from "./../../Context/ModelContext"
 
 
-const VideoCard = ({ _id, videoLength, thumbnail, chennelProfile, title, chennelName, view }) => {
+const VideoCard = ({ _id, videoLength, thumbnail, chennelProfile, title, chennelName, view ,video}) => {
 
     const { watchlistDispatch } = useWatchlist();
     const { likedDispatch } = useLiked();
     const { HistoryDispatch } = useHistory();
     const {  Modaldispatch } = useModal()
-
+    const eachVideo =video.find((item)=>item._id===_id)
 
     return (
         <>
@@ -53,7 +53,7 @@ const VideoCard = ({ _id, videoLength, thumbnail, chennelProfile, title, chennel
                                 }
                             })} className="fa fa-clock-o borderRadius"></i>
                         
-                        <i onClick={() => Modaldispatch({ type: "Modal", payload: true })} className='fas fa-sliders-h borderRadius'></i>
+                        <i onClick={() => Modaldispatch({ type: "Modal", payload: {status:true,video : eachVideo} })} className='fas fa-sliders-h borderRadius'></i>
                     </div>
                 </div>
                 <img className="thumbnailImg" src={thumbnail} alt="videoImg" />

@@ -3,7 +3,7 @@ const ModalReducer = (ModalState, action) => {
         case "Modal":
             return {
                 ...ModalState,
-                openCloseModal: action.payload
+                openCloseModal: action.payload.status,video:action.payload.video
             };
         default:
             return {

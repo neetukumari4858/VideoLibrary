@@ -1,5 +1,6 @@
 import {Home,VideoListing ,Login ,SignUp,WatchList,Liked,History ,Playlist} from "./../Page/index"
 import { Route, Routes} from "react-router-dom";
+import { SinglePlayList } from "../Page/SinglePlayList/SinglePlayList";
 
 const AppRouter=()=>{
     return (
@@ -11,6 +12,7 @@ const AppRouter=()=>{
             <Route path="/LikedPage" element= {<Liked/>}/>
             <Route path="/HistoryPage" element= {<History/>}/>
             <Route path="/PlaylistPage" element= {<Playlist/>}/>
+            <Route path="/PlaylistPage/:id" element= {<SinglePlayList/>}/>
             <Route path="/loginPage" element= {<Login/>}/>
             <Route path="/SignUpPage" element= {<SignUp/>}/>
         </Routes>

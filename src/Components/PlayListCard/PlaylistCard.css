@@ -3,7 +3,7 @@
 .playlistCard{
    height:  5rem;
    width:16rem;
-   border: 1px solid white;
+   /* border: 1px solid white; */
    display: flex; 
    justify-content: center;
    background-color:var(  --gray-text-color);
