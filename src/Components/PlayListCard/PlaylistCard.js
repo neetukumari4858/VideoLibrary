@@ -3,25 +3,25 @@ import {usePlayList} from "../../Context/PlayListContext/PlayListContext"
 import { Link } from "react-router-dom";
 
 const PlaylistCard=()=>{
-    const {Playlist} =usePlayList();
+    const {Playlist,PlayListDispatch} =usePlayList();
+    console.log(Playlist,"playlist  check");
       
     return (
         <>
         { Playlist.map((item)=>{
                 return (
                 <div className="playlistCard" key={item._id}>
-                    <Link to={`/PlaylistPage/${item._id}`} >
                         <div className="delete-icon-and-text">
+                        <Link to={`/PlaylistPage/${item._id}`} >
                         <h2 className="cardTitle cardText">{item.title}</h2>
-                        <i className='fa fa-trash-o '></i>
+                        <i className='fa fa-trash-o delete ' onClick={()=>PlayListDispatch({type:"REMOVE_FROM_PLAYLIST", payload: item._id})}></i>
+                        </Link>
                         </div>
-                    </Link>
-                    <h6 className="videoLength cardText">{Playlist.length} video</h6>
+                    <h6 className="videoLength cardText">{item.videos.length} video</h6>
                  </div>
                 )
             })
-        }
-            
+        }  
         </>
         
     )

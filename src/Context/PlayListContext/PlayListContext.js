@@ -13,16 +13,23 @@ const PlayListReducer=(state,action)=>{
             return [...state,payload.playList]
         case "ADD_TO_PLAYLIST":
             return state.map((playlist)=>
-                playlist._id===payload.Playlist._id? {...playlist,videos : [...playlist.videos,payload.video]}:playlist
+                playlist._id===payload.Playlist._id? {...playlist,videos : [...playlist.videos,payload.video]}:playlist)
+        case "REMOVE_FROM_PLAYLIST":
+            const removedPlaylist = state.filter((item) => item._id !== payload)
+            return removedPlaylist
+            // console.log(removedPlaylist);
+        //     return {...state,
 
-        )
-        default:
+        //     playlists: 
+        //  }
+            
     }
 }
 
+
 const PlayListContextProvider=({children})=>{
     const [Playlist,PlayListDispatch]=useReducer( PlayListReducer,playlists)
-    console.log(Playlist,"playlist")
+    // console.log(Playlist,"playlist")
     return <PlayListContext.Provider value={{Playlist,PlayListDispatch}} >
         {children}
 

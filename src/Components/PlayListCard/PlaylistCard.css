@@ -2,17 +2,18 @@
 
 .playlistCard{
    height:  5rem;
-   width:16rem;
+   width:13rem;
    /* border: 1px solid white; */
    display: flex; 
    justify-content: center;
    background-color:var(  --gray-text-color);
+   border-radius: 0.5rem;
 }
 .PlaylistCard{
     color: white;
 }
 .cardTitle{
-    margin:-1.5rem 0 0 5rem;
+    margin:-0.5rem 0 0 5rem;
 }
 .videoLength{
     margin:3rem  0 0 -14rem;
@@ -22,4 +23,10 @@
     width: 15rem;
     height: 3rem;
     align-items:center ;
+}
+.delete {
+    position: relative;
+    left: 11rem;
+    top: -2.5rem;
+
 }

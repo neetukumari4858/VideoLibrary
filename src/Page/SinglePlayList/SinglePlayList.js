@@ -1,11 +1,14 @@
 import { useParams } from "react-router-dom";
 import {usePlayList} from "./../../Context/PlayListContext/PlayListContext"
+import "./SinglePlayList.css"
 
 const SinglePlayList=()=>{
     const {Playlist}=usePlayList();
     const {id}=useParams()
+    console.log(Playlist,"jkfl")
     const playlist=Playlist.find((playList)=>{
-        return  playList._id ==id 
+        
+        return  playList._id == id 
     })
     // console.log(Playlist,"playlist");
     // console.log(playlist,"After filter playlist");
@@ -13,7 +16,7 @@ const SinglePlayList=()=>{
 
     
     return (
-        <div className="Liked-Page-container">
+        <div className="single-Page-container">
             <div className="section">
                 {playlist ?.videos.map(( {_id, videoLength, thumbnail, chennelProfile, title, chennelName, view })=>{
                     return (

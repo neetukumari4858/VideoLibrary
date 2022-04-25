@@ -9,6 +9,7 @@ const Modal = () => {
   const {video}=ModalState
   // console.log(video,"video");
   const {Playlist,PlayListDispatch} =usePlayList();
+  console.log(Playlist,"playlist now")
   const [title ,setTitle]=useState("")
 
   const ChangeHandler=(e)=>{
@@ -32,14 +33,13 @@ const Modal = () => {
         return (
             <div className="checkboxDiv" key={play._id}>
             <label htmlFor={play._id} className="PlayListcheckbox"> <input id={play._id} type="checkbox"  onChange={(e)=>playListCheckHandler(e,play)}/>{play.title} 
-            {/* onChange={()=>PlayListDispatch({type:"ADD_TO_PLAYLIST",payload:{Playlist:play,video:video}})} */}
             </label>
             </div>
         )
       })}
       <input  className="playlistInput"  onChange={ChangeHandler}  value ={title} placeholder="Create new playlist"/>
       <div className="createText">
-           <h5 onClick={()=>PlayListDispatch({type:"CREATE_PLAYLIST",payload:{playList:{title,_id :Playlist.length+1,videos:[]}
+           <h5 onClick={()=>PlayListDispatch({type:"CREATE_PLAYLIST",payload:{playList:{title,_id :Playlist.length,videos:[]}
 
            }})}>Creact</h5>
       </div>
