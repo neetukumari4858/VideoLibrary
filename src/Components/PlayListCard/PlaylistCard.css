@@ -3,14 +3,13 @@
 .playlistCard{
    height:  5rem;
    width:13rem;
-   /* border: 1px solid white; */
    display: flex; 
    justify-content: center;
-   background-color:var(  --gray-text-color);
+   background-color:var(--gray-text-color);
    border-radius: 0.5rem;
 }
 .PlaylistCard{
-    color: white;
+    color:var(--white-color);
 }
 .cardTitle{
     margin:-0.5rem 0 0 5rem;
@@ -29,4 +28,7 @@
     left: 11rem;
     top: -2.5rem;
 
+}
+.playlistcardLink{
+    text-decoration: transparent;
 }

@@ -1,29 +1,27 @@
 import "./PlaylistCard.css"
-import {usePlayList} from "../../Context/PlayListContext/PlayListContext"
+import { usePlayList } from "../../Context/PlayListContext"
 import { Link } from "react-router-dom";
 
-const PlaylistCard=()=>{
-    const {Playlist,PlayListDispatch} =usePlayList();
-    console.log(Playlist,"playlist  check");
-      
+const PlaylistCard = () => {
+    const { Playlist, PlayListDispatch } = usePlayList();
+    console.log(Playlist, "playlist  check");
     return (
         <>
-        { Playlist.map((item)=>{
+            {Playlist.map((item) => {
                 return (
-                <div className="playlistCard" key={item._id}>
+                    <div className="playlistCard" key={item._id}>
                         <div className="delete-icon-and-text">
-                        <Link to={`/PlaylistPage/${item._id}`} >
-                        <h2 className="cardTitle cardText">{item.title}</h2>
-                        <i className='fa fa-trash-o delete ' onClick={()=>PlayListDispatch({type:"REMOVE_FROM_PLAYLIST", payload: item._id})}></i>
-                        </Link>
+                            <Link to={`/PlaylistPage/${item._id}`} className="playlistcardLink" >
+                                <h2 className="cardTitle cardText">{item.title}</h2>
+                                <i className='fa fa-trash-o delete ' onClick={() => PlayListDispatch({ type: "REMOVE_PLAYLIST", payload: item._id })}></i>
+                            </Link>
                         </div>
-                    <h6 className="videoLength cardText">{item.videos.length} video</h6>
-                 </div>
+                        <h6 className="videoLength cardText">{item.videos.length} video</h6>
+                    </div>
                 )
             })
-        }  
+            }
         </>
-        
     )
 }
-export {PlaylistCard}
+export { PlaylistCard }

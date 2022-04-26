@@ -1,6 +1,5 @@
-import {Home,VideoListing ,Login ,SignUp,WatchList,Liked,History ,Playlist} from "./../Page/index"
+import {Home,VideoListing ,Login ,SignUp,WatchList,Liked,History ,Playlist,SinglePlayList } from "./../Page/index"
 import { Route, Routes} from "react-router-dom";
-import { SinglePlayList } from "../Page/SinglePlayList/SinglePlayList";
 
 const AppRouter=()=>{
     return (

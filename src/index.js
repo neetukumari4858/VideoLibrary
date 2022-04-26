@@ -8,7 +8,7 @@ import {WatchlistContextProvider} from "./Context/watchLaterContext"
 import {LikedContextProvider} from "./Context/LikedContext";
 import {HistoryContextProvider} from "./Context/HistoryContext";
 import {ModalContextProvider} from "./Context/ModelContext"
-import {PlayListContextProvider} from "./Context/PlayListContext/PlayListContext"
+import {PlayListContextProvider} from "./Context/PlayListContext"
 // Call make Server
 makeServer();
 
