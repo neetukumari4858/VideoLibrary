@@ -10,7 +10,7 @@ const Playlist = () => {
             (<div className="section">
                 <PlaylistCard/>
             </div>)
-            :(<h1 className="createPlaylist">Start Creating Your Playlists 😃</h1>)
+            :(<h1 className="Playlist">Start Creating Your Playlists 😃</h1>)
             }
         </div>
     )

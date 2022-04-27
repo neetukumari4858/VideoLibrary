@@ -7,7 +7,6 @@ const Modal = () => {
   const { ModalState, Modaldispatch } = useModal();
   const { video } = ModalState
   const { Playlist, PlayListDispatch } = usePlayList();
-  console.log(Playlist, "playlist now")
   const [title, setTitle] = useState("")
 
   const ChangeHandler = (e) => {
@@ -24,7 +23,6 @@ const Modal = () => {
       </div>
       <hr></hr>
       {Playlist.map((play) => {
-        console.log(play, "play");
         return (
           <div className="checkboxDiv" key={play._id}>
             <label htmlFor={play._id} className="PlayListcheckbox"> <input id={play._id} type="checkbox" onChange={(e) => playListCheckHandler(e, play)} />{play.title}
