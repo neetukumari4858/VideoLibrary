@@ -1,6 +1,7 @@
 const PlayListReducer=(state,action)=>{
-
+     console.log(state,"state");
     const {type,payload}=action 
+
     switch (type) {
         case "CREATE_PLAYLIST":
             return [...state,payload.playList]
