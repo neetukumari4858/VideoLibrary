@@ -2,13 +2,13 @@ import { useState } from "react";
 import { useModal } from "./../../Context/ModelContext"
 import { usePlayList } from "../../Context/PlayListContext";
 import "./Modal.css";
+import { v4 as uuid } from 'uuid';
 
 const Modal = () => {
   const { ModalState, Modaldispatch } = useModal();
   const { video } = ModalState
   const { Playlist, PlayListDispatch } = usePlayList();
   const [title, setTitle] = useState("")
-
   const ChangeHandler = (e) => {
     setTitle(e.target.value)
   }
@@ -34,7 +34,7 @@ const Modal = () => {
       <div className="createText">
         <h5 onClick={() => PlayListDispatch({
           type: "CREATE_PLAYLIST", payload: {
-            playList: { title, _id: Playlist.length, videos: [] }
+            playList: { title, _id: uuid(), videos: [] }
           }
         })}>Creact</h5>
       </div>

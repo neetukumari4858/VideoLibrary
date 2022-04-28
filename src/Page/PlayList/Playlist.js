@@ -3,6 +3,7 @@ import {PlaylistCard} from "./../../Components/PlayListCard/PlaylistCard"
 import { usePlayList } from "../../Context/PlayListContext"
 const Playlist = () => {
     const {Playlist}=usePlayList ()
+    console.log(Playlist,"playlist")
     return (
         <div className="Playlist-Page-container">
             <h1 className="Playlist">Playlist Videos ({Playlist.length})</h1>
