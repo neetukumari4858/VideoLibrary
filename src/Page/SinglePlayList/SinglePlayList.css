@@ -1,0 +1,10 @@
+@import url("../../style.css");
+
+.single-Page-container{
+    height: 37rem;
+    width:67rem;
+    margin-left: 14rem;
+    margin-top: -40.2rem;
+    background-color:var(--dark-black-color);
+}
+

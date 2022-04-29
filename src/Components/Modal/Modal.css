@@ -1,0 +1,41 @@
+@import "./../../style.css";
+
+.ModalDiv {
+  width: 14rem;
+  position:  fixed;
+  left: 45%;
+  top: 50%;
+  transform: translate(-50% ,-50%);
+  z-index: 1;
+  color: var(--white-color);
+  background-color:var(--primary-black-color);
+  border-radius: 0.3rem;
+}
+.ModalHeader{
+  height: 2rem;
+  width: 13rem;
+  margin-left: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+.playlistInput{
+   height: 3rem;
+   width:13.5rem ;
+   color:var(--white-color) ;
+   margin-top: -0.2rem;
+   background-color:var(--primary-black-color) ;
+
+}
+.createText{
+  display: flex;
+  width: 13rem;
+  cursor: pointer;
+  justify-content: flex-end;
+}
+.PlayListcheckbox{
+  height: 2rem;
+  display:flex ;
+  flex-wrap: wrap;
+}

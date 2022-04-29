@@ -19,9 +19,6 @@ const WatchList = () => {
                             <div className="iconDiv">
                                 <p className="VedioLength">{videoLength}</p>
                                 <div className="icons">
-                                    {likedVideos.find((item) => item._id === _id) ? (
-                                        <Link to="/LikedPage"></Link>
-                                    ) : (
                                         <i onClick={() => likedDispatch({
                                             type: "ADD_TO_LIKED", payload: {
                                                 _id: _id,
@@ -33,10 +30,8 @@ const WatchList = () => {
                                                 view: view
                                             }
                                         })} className="fa fa-thumbs-up borderRadius"></i>
-                                    )}
-                                    
                                     <i onClick={() => watchlistDispatch({ type: "REMOVE_From_WatchList", payload: { _id: _id } })} className="fa fa-clock-o borderRadius"></i>
-                                    <i className='fas fa-sliders-h borderRadius'></i>
+                                
                                 </div>
                             </div>
                             <img className="thumbnailImg" src={thumbnail} alt="videoImg" />

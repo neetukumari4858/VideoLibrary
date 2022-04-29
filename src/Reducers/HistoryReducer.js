@@ -1,13 +1,10 @@
 const HistoryReducer=(HistoryState,action)=>{
     const {HistoryVideos} =HistoryState;
-    const HistoryItem = HistoryVideos.find((HistoryPageItems) => HistoryPageItems._id === action.payload)
+    // const HistoryItem = HistoryVideos.find((HistoryPageItems) => HistoryPageItems._id === action.payload._id)
     switch (action.type) {
         case "ADD_TO_HISTORY":
-            if (HistoryItem){
-                return {...HistoryState}
-            }else {
-            }
             return {...HistoryState, HistoryVideos:[...HistoryVideos,{...action.payload}]};
+
         case "REMOVE_FROM_HISTORY":
         return {
             ...HistoryState,
@@ -19,7 +16,7 @@ const HistoryReducer=(HistoryState,action)=>{
                 HistoryVideos: HistoryVideos
             }
         default:
-            return {...HistoryState} 
+            return HistoryState
     }
 }
 export {HistoryReducer}
