@@ -1,11 +1,10 @@
-import {useContext,createContext,useState} from "./react"
-
+import {useContext,createContext,useState} from "react"
 const AuthContext=createContext({isLogedIn:false})
-
 const AuthProvider=({children})=>{
-    const [isLogrdIn,setLogedIn]=useState(false)
+    const [isLogedIn,setLogedIn]=useState(false)
+    console.log(isLogedIn,"islogin")
     return (
-        <AuthContext.Provider value={{isLogrdIn,setLogedIn}}>
+        <AuthContext.Provider value={{isLogedIn,setLogedIn}}>
             {children}
         </AuthContext.Provider>
     )
