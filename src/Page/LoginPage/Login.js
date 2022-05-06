@@ -18,12 +18,9 @@ const Login = () => {
       email:user.email, password:user.password 
     })
     console.log(res)
-    
-
+    const token=res.data.encodedToken
+    localStorage.setItem("token",token)
     setLogedIn(true)
-    console.log(location,"login location")
-    // navigate("/VideoListing", { replace: true })
-    
     navigate(location?.state?.from?.pathname ?? "/", { replace: true });
   }
   return (

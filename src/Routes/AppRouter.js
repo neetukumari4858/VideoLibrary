@@ -8,7 +8,7 @@ const AppRouter=()=>{
         <Routes>
             
             <Route path="/" element={<RequireAuth> <Home /></RequireAuth>}/>
-            <Route path="/VideoListing" element={<RequireAuth> <VideoListing /></RequireAuth>}/>
+            <Route path="/VideoListing" element={<VideoListing/>} />
             <Route path="/LikedPage" element={<RequireAuth> <Liked/></RequireAuth>}/>
             <Route path="/WatchLater" element={<RequireAuth> <WatchList/></RequireAuth>}/>
             <Route path="/HistoryPage" element={<RequireAuth> <History /></RequireAuth>}/>
