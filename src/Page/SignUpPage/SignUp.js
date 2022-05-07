@@ -19,14 +19,22 @@ const SignUp = () => {
         lastName:"",
         checkPolicy:"",
     })
-    
     const signUpHandler=async()=>{
-        const res= await axios.post("/api/auth/signup",{
+        const response= await axios.post("/api/auth/signup",{
             email:newUser.email, password:newUser.password , password:newUser.password , password:newUser.password , password:newUser.password
-          })
-        console.log(res,"signup")
-        setLogedIn(true)
-        navigate(location?.state?.from?.pathname ?? "/", { replace: true });
+        })
+          if (response.status===201){
+            localStorage.setItem(
+              "user",JSON.stringify(response.data.foundUser)
+            );
+            const token=response.data.encodedToken
+            localStorage.setItem("token",token)
+            setLogedIn(true)
+            navigate(location?.state?.from?.pathname ?? "/", { replace: true });
+          }
+          else{
+            toast.error("SignUp Failed!")
+          }
     }
     return (
         <div className="outer-Login-container">

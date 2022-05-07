@@ -1,6 +1,7 @@
 import "./App.css";
 import { Navbar, Sidebar } from "./Components/index";
 import { AppRouter } from "./Routes/AppRouter";
+import 'react-toastify/dist/ReactToastify.css';
 import { Modal } from "./Components/Modal/Modal";
 import {useModal} from "./Context/ModelContext"
 

@@ -1,8 +1,15 @@
 import React from 'react'
 import "./Navbar.css";
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../Context/AuthContext';
 
 const Navbar = () => {
+    const logoutHandler=()=>{
+        localStorage.removeItem("token")
+        localStorage.removeItem("user")
+        
+
+    }
     return (  
     <nav className='header'>
         <div className="nav-section">

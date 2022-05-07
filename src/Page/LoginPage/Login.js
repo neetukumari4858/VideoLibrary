@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import "./Login.css"
 import { useAuth } from "./../../Context/AuthContext";
-import axios from "axios"
+import axios  from 'axios';
+import {toast} from "react-toastify";
+
 const Login = () => {
   const navigate=useNavigate()
   const {setLogedIn}=useAuth();
@@ -14,14 +16,22 @@ const Login = () => {
     checkPolicy:false,
   })
   const loginBtnHandler= async ()=>{
-    const res= await axios.post("/api/auth/login",{
+    const response= await axios.post("/api/auth/login",{
       email:user.email, password:user.password 
     })
-    console.log(res)
-    const token=res.data.encodedToken
-    localStorage.setItem("token",token)
-    setLogedIn(true)
-    navigate(location?.state?.from?.pathname ?? "/", { replace: true });
+    if (response.status===200){
+      localStorage.setItem(
+        "user",JSON.stringify(response.data.foundUser)
+      );
+      const token=response.data.encodedToken
+      localStorage.setItem("token",token)
+      setLogedIn(true)
+      navigate(location?.state?.from?.pathname ?? "/", { replace: true });
+      toast.success("Login Successfull !")
+    }
+    else{
+      toast.error("Login Failed!")
+    }
   }
   return (
     <div className="outer-Login-container">
@@ -56,5 +66,4 @@ const Login = () => {
     </div>
   )
 }
-export {Login}
-
+export {Login} 
