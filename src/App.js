@@ -4,12 +4,27 @@ import { AppRouter } from "./Routes/AppRouter";
 import 'react-toastify/dist/ReactToastify.css';
 import { Modal } from "./Components/Modal/Modal";
 import {useModal} from "./Context/ModelContext"
+import { ToastContainer} from 'react-toastify';
 
 function App() {
   const  {ModalState} = useModal()
   const {openCloseModal}=ModalState
   return ( 
+   
+
      <>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          />
+        <ToastContainer />
       {openCloseModal && <Modal />}
       <div className="App">
         <Navbar/>

@@ -8,7 +8,7 @@ import {toast} from "react-toastify";
 
 const Login = () => {
   const navigate=useNavigate()
-  const {setLogedIn}=useAuth();
+  const {setLogedIn,setUserdetail}=useAuth();
   const location =useLocation();
   const [user,setUser]=useState({
     email:"",
@@ -16,21 +16,28 @@ const Login = () => {
     checkPolicy:false,
   })
   const loginBtnHandler= async ()=>{
-    const response= await axios.post("/api/auth/login",{
-      email:user.email, password:user.password 
-    })
-    if (response.status===200){
-      localStorage.setItem(
-        "user",JSON.stringify(response.data.foundUser)
-      );
-      const token=response.data.encodedToken
-      localStorage.setItem("token",token)
-      setLogedIn(true)
-      navigate(location?.state?.from?.pathname ?? "/", { replace: true });
-      toast.success("Login Successfull !")
-    }
+    if (!user.checkPolicy)
+        toast.warning(
+          "tick the check box and agree to the terms and conditions"
+        );
     else{
-      toast.error("Login Failed!")
+      const response= await axios.post("/api/auth/login",{
+        email:user.email, password:user.password 
+      })
+      if (response.status===200){
+        localStorage.setItem(
+          "user",JSON.stringify(response.data.foundUser)
+        );
+        const token=response.data.encodedToken
+        localStorage.setItem("token",token)
+        setUserdetail({token:response.data.encodedToken, user:response.data.createdUser})
+        setLogedIn(true)
+        navigate(location?.state?.from?.pathname ?? "/", { replace: true });
+        toast.success("Login Successfull !")
+      }
+      else{
+        toast.error("Login Failed!")
+      }
     }
   }
   return (
@@ -52,7 +59,10 @@ const Login = () => {
                 onChange={(event)=>setUser({...user,password:event.target.value})}
                 />
                 <div className='forgotPasswodText'>
-                  <input type="checkbox" id="rememberMe" name="rememberMe" 
+                  <input type="checkbox" id="rememberMe" name="rememberMe" checked={user.checkPolicy}
+                      onChange={() =>
+                        setUser({ ...user, checkPolicy: !user.checkPolicy })
+                      }
 
                   />
                   <label htmlFor="rememberMe" className="remember-me">Remember me </label>
