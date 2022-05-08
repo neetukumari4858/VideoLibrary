@@ -63,14 +63,13 @@ const Login = () => {
                       onChange={() =>
                         setUser({ ...user, checkPolicy: !user.checkPolicy })
                       }
-
                   />
                   <label htmlFor="rememberMe" className="remember-me">Remember me </label>
-                  <Link to ="/SignUpPage" className='forgotPassword'>Forgot Password ?</Link>
+                  <Link to ="/" className='forgotPassword'>Forgot Password ?</Link>
                 </div>
                
                 <button type='button' className="videologin-btn" onClick={()=>loginBtnHandler()}>Login</button>
-                <h4 className='create-account'>Create New Account <i className='fas fa-angle-right'></i></h4>
+                <h4 className='create-account'><Link to ="/SignUpPage" className='forgotPassword'>Create New Account</Link> <i className='fas fa-angle-right'></i></h4>
             </form>
         </div>
     </div>

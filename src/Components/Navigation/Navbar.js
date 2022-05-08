@@ -5,8 +5,9 @@ import { useAuth } from '../../Context/AuthContext';
 
 const Navbar = () => {
     const { userDetail: { token, user },setLogedIn } = useAuth();
-    console.log(token, user);
-    const logoutHandler = () => {
+    const logoutHandler = (e) => {
+        e.preventDefault()
+       
         localStorage.removeItem("token")
         localStorage.removeItem("user")
         setLogedIn(false)
@@ -20,7 +21,7 @@ const Navbar = () => {
                 <div className="outer-search-bar-div">
                     <input type="text" className="search-bar" placeholder="   Search.." />
                 </div>
-                {token && user ? <button className='login-btn text-color' onClick={logoutHandler}>Logout </button> : <button className='login-btn'><Link className="nav-link" to="loginPage">Login</Link></button>
+                {token && user ? <button className='login-btn text-color' onClick={logoutHandler}>Logout</button> : <button className='login-btn'><Link className="nav-link" to="loginPage">Login</Link></button>
                 }
             </div>
         </nav>

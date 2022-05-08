@@ -70,4 +70,5 @@
 }
 .forgotPassword{
     color:var(--blue-color);
+    text-decoration: none;
 }
