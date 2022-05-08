@@ -7,7 +7,6 @@ import { useAuth } from '../../Context/AuthContext';
 import {toast} from "react-toastify";
 
 const SignUp = () => {
-
     const navigate = useNavigate()
     const { setLogedIn } = useAuth();
     const location = useLocation();
