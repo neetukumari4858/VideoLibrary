@@ -49,11 +49,11 @@ const Login = () => {
                 <input className="user-input"
                 type="email"
                 value={user.email}
-                 placeholder="Enter Email...."
+                 placeholder="  demo@gmail.com "
                  onChange={(event)=>setUser({...user,email:event.target.value})}/>
 
                 <label className='lebel-text'>Password</label>
-                <input className="user-input" placeholder="Enter Password..."
+                <input className="user-input" placeholder="  Enter Password..."
                 type="password"
                 value={user.password}
                 onChange={(event)=>setUser({...user,password:event.target.value})}

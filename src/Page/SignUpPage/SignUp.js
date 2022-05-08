@@ -50,19 +50,19 @@ const SignUp = () => {
                 <div className="login-content">
                     <h2 className='signUp-heading'>Sign up</h2>
                     <label className='signUp-lebel'>First Name</label>
-                    <input type="text" className="sign-input" value={newUser.firstName} onChange={(e) => setNewUser({ ...newUser, firstName: e.target.value })} placeholder="Enter First Name" />
+                    <input type="text" className="sign-input" value={newUser.firstName} onChange={(e) => setNewUser({ ...newUser, firstName: e.target.value })} placeholder="  First Name" />
 
                     <label className='signUp-lebel'>Last Name</label>
-                    <input type="text" className="sign-input" value={newUser.lastName} onChange={(e) => setNewUser({ ...newUser, lastName: e.target.value })} placeholder="Enter your Last Name" />
+                    <input type="text" className="sign-input" value={newUser.lastName} onChange={(e) => setNewUser({ ...newUser, lastName: e.target.value })} placeholder="  Last Name" />
 
                     <label className='signUp-lebel'>Email address</label>
-                    <input type="text" className="sign-input" value={newUser.email} onChange={(e) => setNewUser({ ...newUser, email: e.target.value })} placeholder="annu@neog.com" />
+                    <input type="text" className="sign-input" value={newUser.email} onChange={(e) => setNewUser({ ...newUser, email: e.target.value })} placeholder="  Enter Email " />
 
                     <label className='signUp-lebel'>Password</label>
-                    <input type="text" className="sign-input" value={newUser.password} onChange={(e) => setNewUser({ ...newUser, password: e.target.value })} placeholder="..................." />
+                    <input type="text" className="sign-input" value={newUser.password} onChange={(e) => setNewUser({ ...newUser, password: e.target.value })} placeholder="  ............." />
 
                     <label className='signUp-lebel'>Confirm Password</label>
-                    <input type="text" className="sign-input" value={newUser.confirmPassword} onChange={(e) => setNewUser({ ...newUser, confirmPassword: e.target.value })} placeholder="..................." /><br />
+                    <input type="text" className="sign-input" value={newUser.confirmPassword} onChange={(e) => setNewUser({ ...newUser, confirmPassword: e.target.value })} placeholder="  ............." /><br />
                     <div className='termsandConditions-div'>
                         <input type="checkbox" id='termsAndCondition' value={newUser.checkPolicy} onChange={(e) => setNewUser({ ...newUser, checkPolicy: !newUser.checkPolicy })} />
                         <label htmlFor="termsAndCondition" className='terms-and-condition'>I accept all Terms & Conditions</label>
