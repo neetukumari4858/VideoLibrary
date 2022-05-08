@@ -4,13 +4,11 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../Context/AuthContext';
 
 const Navbar = () => {
-    const { userDetail: { token, user },setLogedIn } = useAuth();
-    const logoutHandler = (e) => {
-        e.preventDefault()
-       
+    const { userDetail: { token, user },setUserdetail } = useAuth();
+    const logoutHandler = () => {
         localStorage.removeItem("token")
         localStorage.removeItem("user")
-        setLogedIn(false)
+        setUserdetail({token:"",user:{}})
     }
     return (
         <nav className='header'>

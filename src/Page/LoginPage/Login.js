@@ -30,7 +30,7 @@ const Login = () => {
         );
         const token=response.data.encodedToken
         localStorage.setItem("token",token)
-        setUserdetail({token:response.data.encodedToken, user:response.data.createdUser})
+        setUserdetail({token:response.data.encodedToken, user:response.data.foundUser})
         setLogedIn(true)
         navigate(location?.state?.from?.pathname ?? "/", { replace: true });
         toast.success("Login Successfull !")
@@ -59,17 +59,17 @@ const Login = () => {
                 onChange={(event)=>setUser({...user,password:event.target.value})}
                 />
                 <div className='forgotPasswodText'>
-                  <input type="checkbox" id="rememberMe" name="rememberMe" checked={user.checkPolicy}
+                  <input type="checkbox"  id="rememberMe" name="rememberMe" checked={user.checkPolicy}
                       onChange={() =>
                         setUser({ ...user, checkPolicy: !user.checkPolicy })
                       }
                   />
                   <label htmlFor="rememberMe" className="remember-me">Remember me </label>
-                  <Link to ="/" className='forgotPassword'>Forgot Password ?</Link>
+                  <p className='forgotPassword'>Forgot Password ?</p>
                 </div>
                
                 <button type='button' className="videologin-btn" onClick={()=>loginBtnHandler()}>Login</button>
-                <h4 className='create-account'><Link to ="/SignUpPage" className='forgotPassword'>Create New Account</Link> <i className='fas fa-angle-right'></i></h4>
+                <h4 className='create-account'><Link to ="/SignUpPage" className='createAccount'>Create New Account</Link> <i className='fas fa-angle-right'></i></h4>
             </form>
         </div>
     </div>

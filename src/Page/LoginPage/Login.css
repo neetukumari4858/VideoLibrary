@@ -44,7 +44,7 @@
 }
 .videologin-btn{
     padding: 0.7rem 9rem;
-    margin-top: 1.5rem;
+    margin-top: -1.3rem;
     background-color: var(--red-color);
     border: transparent;
     border-radius: 0.2rem;
@@ -56,7 +56,7 @@
 .forgotPasswodText{
     display: flex;
     justify-content: space-between;
-    margin-top: 1.5rem;
+    margin-top: 1.1rem;
 }
 .lebel-text{
     display: flex;
@@ -66,9 +66,21 @@
 
 .remember-me{
     margin-left: -4rem;
+    margin-top: 1px;
     
 }
 .forgotPassword{
     color:var(--blue-color);
     text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    top:-1rem;
+    left: -0.5rem;
+}
+.createAccount{
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    top:-0.1rem;
+    color:var(--white-color);
 }
