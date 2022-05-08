@@ -51,6 +51,7 @@
     color: var(--white-color);
     font-weight: 900;
     margin-left: 0.5rem;
+    cursor: pointer;
 }
 .forgotPasswodText{
     display: flex;
@@ -69,4 +70,5 @@
 }
 .forgotPassword{
     color:var(--blue-color);
+    text-decoration: none;
 }
