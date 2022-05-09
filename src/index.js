@@ -9,26 +9,23 @@ import {LikedContextProvider} from "./Context/LikedContext";
 import {HistoryContextProvider} from "./Context/HistoryContext";
 import {ModalContextProvider} from "./Context/ModelContext"
 import {PlayListContextProvider} from "./Context/PlayListContext"
-import {AuthProvider} from "./Context/AuthContext"
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthProvider>
-        <WatchlistContextProvider>
-          <LikedContextProvider>
-            <HistoryContextProvider>
-              <ModalContextProvider>
-              <PlayListContextProvider>
-                <App />
-              </PlayListContextProvider>
-              </ModalContextProvider>
-            </HistoryContextProvider>
-          </LikedContextProvider>
-        </WatchlistContextProvider>
-      </AuthProvider>
+      <WatchlistContextProvider>
+        <LikedContextProvider>
+          <HistoryContextProvider>
+            <ModalContextProvider>
+            <PlayListContextProvider>
+              <App />
+            </PlayListContextProvider>
+            </ModalContextProvider>
+          </HistoryContextProvider>
+        </LikedContextProvider>
+      </WatchlistContextProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
