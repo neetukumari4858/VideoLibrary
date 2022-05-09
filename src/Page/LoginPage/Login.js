@@ -38,6 +38,7 @@ const Login = () => {
   return (
     <div className="outer-Login-container">
         <div className="login-outer-container">
+          <form>
             <div className="login-content-container">
                 <h2 className='Login-heading-two'>Login</h2>
                 <label className='lebel-text'>Email address</label>
@@ -65,6 +66,7 @@ const Login = () => {
                
                 <button type='button' className="videologin-btn" onClick={()=>loginBtnHandler()}>Login</button>
                 <h4 className='create-account'><Link to ="/SignUpPage" className='createAccount'>Create New Account</Link> <i className='fas fa-angle-right'></i></h4>
+              </div>
             </form>
 
         </div>
