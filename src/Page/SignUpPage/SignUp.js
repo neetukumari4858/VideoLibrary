@@ -1,11 +1,6 @@
-
-import React, { useState } from 'react';
-import { useLocation, useNavigate, Link } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import "./SignUp.css";
-import axios from 'axios';
-import { useAuth } from '../../Context/AuthContext';
-import {toast} from "react-toastify";
-
 const SignUp = () => {
     const navigate = useNavigate()
     const { setLogedIn } = useAuth();
@@ -43,6 +38,7 @@ const SignUp = () => {
             }
         }
     }
+
     return (
         <div className="outer-Login-container">
             <div className="signup-container">
@@ -63,19 +59,18 @@ const SignUp = () => {
                     <label className='signUp-lebel'>Confirm Password</label>
                     <input type="text" className="sign-input" value={newUser.confirmPassword} onChange={(e) => setNewUser({ ...newUser, confirmPassword: e.target.value })} placeholder="  ............." /><br />
                     <div className='termsandConditions-div'>
-                        <input type="checkbox" id='termsAndCondition' value={newUser.checkPolicy} onChange={(e) => setNewUser({ ...newUser, checkPolicy: !newUser.checkPolicy })} />
-                        <label htmlFor="termsAndCondition" className='terms-and-condition'>I accept all Terms & Conditions</label>
+                        <input type="checkbox" id='termsAndCondition'/> 
+                        <lebel htmlFor="termsAndCondition" className='terms-and-condition'>I accept all Terms & Conditions</lebel>
                     </div>
-
-                    <button className="sign-btn" onClick={signUpHandler}>Sign up</button>
+                    
+                    <button className="sign-btn">Sign up</button>
                     <h4 className='alreadyHaveAccount' >Already have an account? <Link to="/LoginPage" className='forgotPassword'> Login Here</Link></h4>
-
                 </div>
             </div>
         </div>
     )
 }
-export { SignUp }
+export {SignUp}
 
 
 

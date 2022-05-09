@@ -1,11 +1,6 @@
-
-import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import "./Login.css"
-import { useAuth } from "./../../Context/AuthContext";
-import axios  from 'axios';
-import {toast} from "react-toastify";
-
 const Login = () => {
   const navigate=useNavigate()
   const {setLogedIn,setUserdetail}=useAuth();
@@ -43,7 +38,7 @@ const Login = () => {
   return (
     <div className="outer-Login-container">
         <div className="login-outer-container">
-            <form className="login-content-container">
+            <div className="login-content-container">
                 <h2 className='Login-heading-two'>Login</h2>
                 <label className='lebel-text'>Email address</label>
                 <input className="user-input"
@@ -71,8 +66,10 @@ const Login = () => {
                 <button type='button' className="videologin-btn" onClick={()=>loginBtnHandler()}>Login</button>
                 <h4 className='create-account'><Link to ="/SignUpPage" className='createAccount'>Create New Account</Link> <i className='fas fa-angle-right'></i></h4>
             </form>
+
         </div>
     </div>
   )
 }
-export {Login} 
+export {Login}
+
