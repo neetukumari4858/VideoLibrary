@@ -5,7 +5,7 @@ import { useAuth } from '../../Context/AuthContext';
 
 const Navbar = () => {
     const { userDetail: { token, user }, setUserdetail } = useAuth();
-    console.log(token,"currunt token")
+    // console.log(token,"currunt token")
     const logoutHandler = () => {
         localStorage.removeItem("token")
         localStorage.removeItem("user")

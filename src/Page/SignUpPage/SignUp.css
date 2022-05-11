@@ -31,13 +31,20 @@
     margin: 0.8rem 0 0 -0.2rem;
 }
 .sign-btn{
-    padding: 0.5rem 7rem;
+    padding: 0.7rem 7.3rem;
     border: transparent;
     margin-top: 1rem;
     border-radius: 0.3rem;
+    font-weight: 800;
+    color: var(--white-color);
     background-color: var(--red-color);
 }
 .alreadyHaveAccount{
     color: var(--white-color);
     font-size: 0.9rem;
+}
+.loginHere{
+    margin-left: 1.8rem;
+    color: var(--blue-color);
+
 }

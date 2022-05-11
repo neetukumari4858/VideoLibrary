@@ -1,6 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import  React ,{ useState } from 'react';
+import { Link,useNavigate ,useLocation} from 'react-router-dom';
+import { useAuth } from '../../Context/AuthContext';
+import {toast} from "react-toastify";
 import "./SignUp.css";
+import axios from 'axios';
 const SignUp = () => {
     const navigate = useNavigate()
     const { setLogedIn } = useAuth();
@@ -59,12 +62,12 @@ const SignUp = () => {
                     <label className='signUp-lebel'>Confirm Password</label>
                     <input type="text" className="sign-input" value={newUser.confirmPassword} onChange={(e) => setNewUser({ ...newUser, confirmPassword: e.target.value })} placeholder="  ............." /><br />
                     <div className='termsandConditions-div'>
-                        <input type="checkbox" id='termsAndCondition'/> 
-                        <lebel htmlFor="termsAndCondition" className='terms-and-condition'>I accept all Terms & Conditions</lebel>
+                        <input type="checkbox" id='termsAndCondition' value={newUser.checkPolicy} onChange={(e) => setNewUser({ ...newUser, checkPolicy: !newUser.checkPolicy })} />
+                        <label htmlFor="termsAndCondition" className='terms-and-condition'>I accept all Terms & Conditions</label>
                     </div>
                     
-                    <button className="sign-btn">Sign up</button>
-                    <h4 className='alreadyHaveAccount' >Already have an account? <Link to="/LoginPage" className='forgotPassword'> Login Here</Link></h4>
+                    <button className="sign-btn" onClick={signUpHandler}>Sign up</button>
+                    <h4 className='alreadyHaveAccount' >Already have an account? <Link to="/LoginPage" className='loginHere'> Login Here</Link></h4>
                 </div>
             </div>
         </div>
@@ -76,3 +79,5 @@ export {SignUp}
 
 
 
+{/* <input type="checkbox" id='termsAndCondition' value={newUser.checkPolicy} onChange={(e) => setNewUser({ ...newUser, checkPolicy: !newUser.checkPolicy })} />
+<label htmlFor="termsAndCondition" className='terms-and-condition'>I accept all Terms & Conditions</label> */}

@@ -9,9 +9,10 @@ const AuthProvider=({children})=>{
     console.log(token,"gettoken")
     const user=JSON.parse(localStorage.getItem("user"))
     console.log(token ,user,"now")
-
+ 
     useEffect(() => {
         if (token && user){
+            console.log(token,"tokenuseEffect")
             setUserdetail({token,user})
         }
     },[])
