@@ -10,7 +10,6 @@ const AuthProvider=({children})=>{
 
     useEffect(() => {
         if (token && user){
-            console.log(token,"tokenuseEffect")
             setUserdetail({token,user})
         }
     },[])
