@@ -21,7 +21,6 @@ const Navbar = () => {
                 </div>
                 {token && user ? <button className='login-btn text-color' onClick={logoutHandler}>Logout</button> : <button className='login-btn'><Link className="nav-link" to="loginPage">Login</Link></button>
                 }
-                {/* <button className='login-btn'><Link className="nav-link" to="loginPage">Login</Link></button> */}
             </div>
         </nav>
     );
