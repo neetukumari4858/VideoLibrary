@@ -6,13 +6,10 @@ const AuthProvider=({children})=>{
     const [isLogedIn,setLogedIn]=useState(userLoggedIn)
     const [userDetail,setUserdetail]=useState({token:"",user: {}})
     const token=localStorage.getItem("token")
-    console.log(token,"gettoken")
     const user=JSON.parse(localStorage.getItem("user"))
-    console.log(token ,user,"now")
- 
+
     useEffect(() => {
         if (token && user){
-            console.log(token,"tokenuseEffect")
             setUserdetail({token,user})
         }
     },[])

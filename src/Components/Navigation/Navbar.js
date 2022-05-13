@@ -5,7 +5,6 @@ import { useAuth } from '../../Context/AuthContext';
 
 const Navbar = () => {
     const { userDetail: { token, user }, setUserdetail } = useAuth();
-    // console.log(token,"currunt token")
     const logoutHandler = () => {
         localStorage.removeItem("token")
         localStorage.removeItem("user")
@@ -22,7 +21,6 @@ const Navbar = () => {
                 </div>
                 {token && user ? <button className='login-btn text-color' onClick={logoutHandler}>Logout</button> : <button className='login-btn'><Link className="nav-link" to="loginPage">Login</Link></button>
                 }
-                {/* <button className='login-btn'><Link className="nav-link" to="loginPage">Login</Link></button> */}
             </div>
         </nav>
     );

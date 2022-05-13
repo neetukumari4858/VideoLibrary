@@ -75,9 +75,3 @@ const SignUp = () => {
 }
 export {SignUp}
 
-
-
-
-
-{/* <input type="checkbox" id='termsAndCondition' value={newUser.checkPolicy} onChange={(e) => setNewUser({ ...newUser, checkPolicy: !newUser.checkPolicy })} />
-<label htmlFor="termsAndCondition" className='terms-and-condition'>I accept all Terms & Conditions</label> */}
