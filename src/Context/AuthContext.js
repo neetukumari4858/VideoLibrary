@@ -7,8 +7,7 @@ const AuthProvider=({children})=>{
     const [userDetail,setUserdetail]=useState({token:"",user: {}})
     const token=localStorage.getItem("token")
     const user=JSON.parse(localStorage.getItem("user"))
-    console.log(token ,user,"now")
- 
+
     useEffect(() => {
         if (token && user){
             console.log(token,"tokenuseEffect")
