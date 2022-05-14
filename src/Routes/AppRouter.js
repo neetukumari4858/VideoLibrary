@@ -6,7 +6,6 @@ const AppRouter=()=>{
     return (
        <>
         <Routes>
-            
             <Route path="/" element={<RequireAuth> <Home /></RequireAuth>}/>
             <Route path="/VideoListing" element={<VideoListing/>} />
             <Route path="/LikedPage" element={<RequireAuth> <Liked/></RequireAuth>}/>
