@@ -72,3 +72,6 @@
     color:var(--blue-color);
     text-decoration: none;
 }
+.createColor{
+    color: var(--white-color);
+}
