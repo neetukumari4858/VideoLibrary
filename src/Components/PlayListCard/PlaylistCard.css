@@ -12,7 +12,10 @@
     color:var(--white-color);
 }
 .cardTitle{
-    margin:-0.5rem 0 0 5rem;
+    position: relative;
+    top: 0.5rem;
+    left: 1rem;
+    color: var(--white-color);
 }
 .videoLength{
     margin:3rem  0 0 -14rem;
