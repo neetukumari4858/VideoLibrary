@@ -48,10 +48,10 @@
     justify-content: space-between;
     margin-left: 1rem;
 }
-.VedioLength{
-    
+.VedioLength{ 
     display: flex;
     align-items: center;
+    color: var(--white-color);
 }
 .icons{
     display: flex;
@@ -62,4 +62,20 @@
     padding: 0.5rem 0.5rem;
     align-items: center;
     cursor: pointer; 
+}
+.videoEachIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+    background-color: rgba(0, 0, 0, .7);
+    padding: 0.5rem 0.5rem;
+    border-radius: 50%;
+    cursor: pointer; 
+
+}
+.videoEachIcon:hover {
+    background-color: var( --light-gray-color);
+    background-color: #0c0f12;
+    padding: 0.5rem 0.5rem;
 }

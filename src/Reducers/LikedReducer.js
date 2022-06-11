@@ -1,15 +1,12 @@
 
-const likedReducer=(likedState,action)=>{
+const likedReducer=(likedState,likeAction)=>{
     const {likedVideos} =likedState;
-    switch (action.type) {
-        case "ADD_TO_LIKED":
-            return {...likedState, likedVideos:[...likedVideos,{...action.payload}]};
+    switch (likeAction.type) {
+        case "LIKED_VIDEO":
+            return {...likedState, likedVideos:likeAction.payload};
             
-        case "REMOVE_FROM_LIKED":
-        return {
-            ...likedState,
-            likedVideos: [...likedVideos.filter((removeItem) => removeItem._id !== action.payload._id)]
-          };
+        case "DELETE_LIKED":
+        return  {...likedState, likedVideos:likeAction.payload};
         default:
             return {...likedState} 
     }
