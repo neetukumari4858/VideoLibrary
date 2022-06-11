@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const deleteLiked = async (videoId, token,likedDispatch) => {
   try {

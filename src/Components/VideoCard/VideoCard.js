@@ -1,11 +1,18 @@
-import { useWatchlist } from '../../Context/watchLaterContext'
 import './VideoCard.css'
-import { useLiked } from '../../Context/LikedContext'
-import { useHistory } from '../../Context/HistoryContext'
-import { useModal } from './../../Context/ModelContext'
-import { useAuth } from '../../Context/AuthContext'
-import { addToLike } from '../../services/likeServices/addToLike'
-import { deleteLiked } from '../../services/likeServices/deleteLinked'
+import {
+  useWatchlist,
+  useLiked,
+  useHistory,
+  useModal,
+  useAuth,
+} from './../../Context/index'
+import {
+  addToLike,
+  deleteLiked,
+  addToWatchLater,
+  deleteWatchLater,
+} from './../../services/index'
+import { BsBookmark, BsFillBookmarkFill } from 'react-icons/bs'
 
 const VideoCard = ({
   _id,
@@ -17,14 +24,14 @@ const VideoCard = ({
   view,
   video,
 }) => {
-  const { watchlistDispatch } = useWatchlist()
+  const { watchlistState, watchlistDispatch } = useWatchlist()
+  const { watchListVideos } = watchlistState
   const { likedState, likedDispatch } = useLiked()
   const { likedVideos } = likedState
   const { HistoryDispatch } = useHistory()
   const { Modaldispatch } = useModal()
   const { userDetail } = useAuth()
   const { token } = userDetail
-  const selectedVideo = video.find((item) => item._id === _id)
 
   const likeVideoHandler = () => {
     if (token) {
@@ -37,6 +44,19 @@ const VideoCard = ({
 
   const deleteVideoHandler = () => {
     deleteLiked(_id, token, likedDispatch)
+  }
+
+  const watchLaterHandler = (_id) => {
+    if (token) {
+      const videos = video.find((item) => item._id === _id)
+      addToWatchLater(videos, token, watchlistDispatch)
+    } else {
+      navigate('/loginPage')
+      alert('login first')
+    }
+  }
+  const deleteWatchLaterHandler = () => {
+    deleteWatchLater(_id, token, watchlistDispatch)
   }
 
   return (
@@ -73,24 +93,18 @@ const VideoCard = ({
                 onClick={likeVideoHandler}
               ></i>
             )}
-
-            <i
-              onClick={() =>
-                watchlistDispatch({
-                  type: 'ADD_TO_WATCHLIST',
-                  payload: {
-                    _id: _id,
-                    videoLength: videoLength,
-                    thumbnail: thumbnail,
-                    chennelProfile: chennelProfile,
-                    title: title,
-                    chennelName: chennelName,
-                    view: view,
-                  },
-                })
-              }
-              className="fa fa-clock-o borderRadius"
-            ></i>
+            {watchListVideos.some((item) => item._id === _id) ? (
+              <i className="videoEachIcon" onClick={deleteWatchLaterHandler}>
+                <BsFillBookmarkFill />
+              </i>
+            ) : (
+              <i
+                className="videoEachIcon"
+                onClick={(e) => watchLaterHandler(_id)}
+              >
+                <BsBookmark />
+              </i>
+            )}
 
             <i
               onClick={() =>

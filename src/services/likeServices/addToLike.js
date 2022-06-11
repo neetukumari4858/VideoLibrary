@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const addToLike = async (video, token, likedDispatch) => {
   try {

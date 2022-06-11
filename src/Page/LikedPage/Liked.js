@@ -1,7 +1,6 @@
 import './Liked.css'
-import { useLiked } from '../../Context/LikedContext'
-import { deleteLiked } from '../../services/likeServices/deleteLinked'
-import { useAuth } from '../../Context/AuthContext'
+import { deleteLiked } from '../../services/index'
+import { useAuth, useLiked } from '../../Context/index'
 
 const Liked = () => {
   const { likedState, likedDispatch } = useLiked()
