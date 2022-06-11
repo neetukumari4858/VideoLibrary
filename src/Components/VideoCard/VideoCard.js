@@ -11,6 +11,9 @@ import {
   deleteLiked,
   addToWatchLater,
   deleteWatchLater,
+  addToHistory,
+  deleteAllHistory,
+  deleteHistory
 } from './../../services/index'
 import { BsBookmark, BsFillBookmarkFill } from 'react-icons/bs'
 
@@ -34,6 +37,7 @@ const VideoCard = ({
   const { token } = userDetail
 
   const likeVideoHandler = () => {
+    const selectedVideo = video.find((item) => item._id === _id)
     if (token) {
       addToLike(selectedVideo, token, likedDispatch)
     } else {
@@ -59,25 +63,30 @@ const VideoCard = ({
     deleteWatchLater(_id, token, watchlistDispatch)
   }
 
+  const addToHistoryHandler = () => {
+    addToHistory(video, token, HistoryDispatch )
+  }
+
   return (
     <>
       <div
-        onClick={() =>
-          HistoryDispatch({
-            type: 'ADD_TO_HISTORY',
-            payload: {
-              _id: _id,
-              videoLength: videoLength,
-              thumbnail: thumbnail,
-              chennelProfile: chennelProfile,
-              title: title,
-              chennelName: chennelName,
-              view: view,
-            },
-          })
-        }
-        className="cartContainer"
+        // onClick={() =>
+        //   HistoryDispatch({
+        //     type: 'ADD_TO_HISTORY',
+        //     payload: {
+        //       _id: _id,
+        //       videoLength: videoLength,
+        //       thumbnail: thumbnail,
+        //       chennelProfile: chennelProfile,
+        //       title: title,
+        //       chennelName: chennelName,
+        //       view: view,
+        //     },
+        //   })
+        // }
         key={_id}
+        className="cartContainer"
+        onClick={addToHistoryHandler}
       >
         <div className="iconDiv">
           <p className="VedioLength">{videoLength}</p>

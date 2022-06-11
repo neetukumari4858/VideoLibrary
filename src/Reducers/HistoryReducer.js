@@ -1,17 +1,17 @@
-const HistoryReducer=(HistoryState,action)=>{
+const HistoryReducer=(HistoryState,historyAction)=>{
     const {HistoryVideos} =HistoryState;
-    // const HistoryItem = HistoryVideos.find((HistoryPageItems) => HistoryPageItems._id === action.payload._id)
-    switch (action.type) {
+    // const HistoryItem = HistoryVideos.find((HistoryPageItems) => HistoryPageItems._id === historyAction.payload._id)
+    switch (historyAction.type) {
         case "ADD_TO_HISTORY":
-            return {...HistoryState, HistoryVideos:[...HistoryVideos,{...action.payload}]};
+            return {...HistoryState, HistoryVideos:historyAction.payload};
 
-        case "REMOVE_FROM_HISTORY":
+        case "DELETE_HISTORY":
         return {
             ...HistoryState,
-            HistoryVideos: [...HistoryVideos.filter((removeItem) => removeItem._id !== action.payload._id)]
+            HistoryVideos:historyAction.payload
           };
-        case "CLEAR_ALL":
-            HistoryVideos.length = 0
+        case "DELETE_ALL_HISTORY":
+
             return { ...HistoryState,
                 HistoryVideos: HistoryVideos
             }
