@@ -1,7 +1,6 @@
 import {Home,VideoListing ,Login ,SignUp,WatchList,Liked,History ,Playlist,SinglePlayList } from "./../Page/index"
 import { Route, Routes} from "react-router-dom";
-import {RequireAuth} from "./../Utils/RequireAuth"
-
+import {RequireAuth} from "./../RequireAuth";
 const AppRouter=()=>{
     return (
        <>

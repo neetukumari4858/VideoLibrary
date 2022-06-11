@@ -1,23 +1,26 @@
+import { useContext, createContext, useReducer } from 'react'
+import { authReducer } from "./../Reducers/authReducer"
+const AuthContext = createContext(null)
 
-import {useContext,createContext,useState,useEffect} from "react"
-const AuthContext=createContext({isLogedIn:false})
-const AuthProvider=({children})=>{
-    const userLoggedIn =localStorage.getItem("user") ? true : false
-    const [isLogedIn,setLogedIn]=useState(userLoggedIn)
-    const [userDetail,setUserdetail]=useState({token:"",user: {}})
-    const token=localStorage.getItem("token")
-    const user=JSON.parse(localStorage.getItem("user"))
+const AuthProvider = ({ children }) => {
+  const [userDetail, userDispatch] = useReducer(authReducer, {
+    user: JSON.parse(localStorage.getItem('user')) || {},
+    token: localStorage.getItem('token') || ' ',
+  })
 
-    useEffect(() => {
-        if (token && user){
-            setUserdetail({token,user})
-        }
-    },[])
-    return (
-        <AuthContext.Provider value={{isLogedIn,setLogedIn,userDetail,setUserdetail}}>
-            {children}
-        </AuthContext.Provider>
-    )
+  return (
+    <AuthContext.Provider value={{ userDetail, userDispatch }}>
+      {children}
+    </AuthContext.Provider>
+  )
 }
-const useAuth=()=>useContext(AuthContext)
-export {useAuth,AuthProvider}
+const useAuth = () => useContext(AuthContext)
+export { useAuth, AuthProvider }
+
+
+
+
+
+
+
+
