@@ -1,12 +1,12 @@
 import './History.css'
-import { useHistory,useAuth } from '../../Context/index'
-import {deleteAllHistory, deleteHistory} from "./../../services/index"
+import { useHistory, useAuth } from '../../Context/index'
+import { deleteAllHistory, deleteHistory } from './../../services/index'
 
 const History = () => {
   const { HistoryState, HistoryDispatch } = useHistory()
   const { HistoryVideos } = HistoryState
 
-  const { userDetail} = useAuth()
+  const { userDetail } = useAuth()
   const { token } = userDetail
 
   const deleteHistoryHandler = (_id) => {
@@ -16,12 +16,12 @@ const History = () => {
   const clearHistoryHandler = () => {
     deleteAllHistory(token, HistoryDispatch)
   }
-  
+
   return (
     <div className="History-Page-container">
       <div className="history-header">
         <h1 className="History">History Videos</h1>
-        <button className="clear-btn" onClick={()=>clearHistoryHandler}>
+        <button className="clear-btn" onClick={clearHistoryHandler}>
           CLEAR FULL HISTORY
         </button>
       </div>
@@ -42,7 +42,7 @@ const History = () => {
                   <p className="VedioLength">{videoLength}</p>
                   <div className="icons">
                     <i
-                      onClick={(e)=>deleteHistoryHandler(_id)}
+                      onClick={(e) => deleteHistoryHandler(_id)}
                       className="fa fa-trash-o videoEachIcon"
                     ></i>
                   </div>

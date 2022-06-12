@@ -12,8 +12,6 @@ import {
   addToWatchLater,
   deleteWatchLater,
   addToHistory,
-  deleteAllHistory,
-  deleteHistory
 } from './../../services/index'
 import { BsBookmark, BsFillBookmarkFill } from 'react-icons/bs'
 
@@ -36,8 +34,8 @@ const VideoCard = ({
   const { userDetail } = useAuth()
   const { token } = userDetail
 
+  const selectedVideo = video.find((item) => item._id === _id)
   const likeVideoHandler = () => {
-    const selectedVideo = video.find((item) => item._id === _id)
     if (token) {
       addToLike(selectedVideo, token, likedDispatch)
     } else {
@@ -64,7 +62,7 @@ const VideoCard = ({
   }
 
   const addToHistoryHandler = () => {
-    addToHistory(video, token, HistoryDispatch )
+    addToHistory(selectedVideo, token, HistoryDispatch)
   }
 
   return (
