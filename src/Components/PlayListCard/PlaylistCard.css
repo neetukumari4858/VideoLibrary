@@ -32,3 +32,6 @@
 .playlistcardLink{
     text-decoration: transparent;
 }
+.cardText{
+    color:  var(--white-color);
+}

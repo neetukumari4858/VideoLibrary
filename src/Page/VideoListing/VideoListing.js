@@ -12,6 +12,7 @@ const VideoListing=()=>{
             const productResponse=await axios.get('/api/videos');
             setLoading("")
             setProductsData(productResponse.data.videos);
+            console.log(productResponse.data.videos,"video");
         }
         getData();
     },[]);

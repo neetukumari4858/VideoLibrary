@@ -3,11 +3,12 @@ import {PlaylistCard} from "./../../Components/PlayListCard/PlaylistCard"
 import { usePlayList } from "../../Context/PlayListContext"
 const Playlist = () => {
     const {Playlist}=usePlayList ()
-    console.log(Playlist,"playlist")
+    const {playlists}=Playlist
+    
     return (
         <div className="Playlist-Page-container">
-            <h1 className="Playlist">Playlist Videos ({Playlist.length})</h1>
-            {Playlist.length>0 ?
+            <h1 className="Playlist">Playlist Videos ({playlists.length})</h1>
+            {playlists.length>0 ?
             (<div className="section">
                 <PlaylistCard/>
             </div>)

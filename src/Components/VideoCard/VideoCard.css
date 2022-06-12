@@ -46,7 +46,7 @@
     position:relative;
     top: 11.6rem;
     justify-content: space-between;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
 }
 .VedioLength{ 
     display: flex;
@@ -55,6 +55,8 @@
 }
 .icons{
     display: flex;
+    gap: 0.5rem;
+
 }
 .borderRadius{
     border-radius: 100%;

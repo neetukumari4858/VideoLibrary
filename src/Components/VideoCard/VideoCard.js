@@ -14,6 +14,7 @@ import {
   addToHistory,
 } from './../../services/index'
 import { BsBookmark, BsFillBookmarkFill } from 'react-icons/bs'
+import { RiPlayList2Fill } from 'react-icons/ri'
 
 const VideoCard = ({
   _id,
@@ -65,27 +66,21 @@ const VideoCard = ({
     addToHistory(selectedVideo, token, HistoryDispatch)
   }
 
+  const playlistHandler = (_id) => {
+    if (token) {
+      Modaldispatch({
+        type: 'Modal',
+        payload: { status: true, video: selectedVideo },
+      })
+    } else {
+      navigate('/LoginPage')
+      alert('login first')
+    }
+  }
+
   return (
     <>
-      <div
-        // onClick={() =>
-        //   HistoryDispatch({
-        //     type: 'ADD_TO_HISTORY',
-        //     payload: {
-        //       _id: _id,
-        //       videoLength: videoLength,
-        //       thumbnail: thumbnail,
-        //       chennelProfile: chennelProfile,
-        //       title: title,
-        //       chennelName: chennelName,
-        //       view: view,
-        //     },
-        //   })
-        // }
-        key={_id}
-        className="cartContainer"
-        onClick={addToHistoryHandler}
-      >
+      <div key={_id} className="cartContainer" onClick={addToHistoryHandler}>
         <div className="iconDiv">
           <p className="VedioLength">{videoLength}</p>
           <div className="icons">
@@ -113,15 +108,9 @@ const VideoCard = ({
               </i>
             )}
 
-            <i
-              onClick={() =>
-                Modaldispatch({
-                  type: 'Modal',
-                  payload: { status: true, video: eachVideo },
-                })
-              }
-              className="fas fa-sliders-h borderRadius"
-            ></i>
+            <i onClick={playlistHandler} className="videoEachIcon">
+              <RiPlayList2Fill />
+            </i>
           </div>
         </div>
         <img className="thumbnailImg" src={thumbnail} alt="videoImg" />

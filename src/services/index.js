@@ -5,3 +5,6 @@ export {deleteLiked} from "./likeServices/deleteLinked";
 export {addToHistory} from "./historyServices/addToHistory";
 export {deleteAllHistory} from "./historyServices/deleteAllHistory";
 export {deleteHistory} from "./historyServices/deleteHistory";
+export {createPlaylist} from "./playlistServices/createPlaylist";
+export {addVideoToPlaylist} from "./playlistServices/addVideoToPlaylist";
+export {deletePlaylist } from "./playlistServices/deletePlaylist";

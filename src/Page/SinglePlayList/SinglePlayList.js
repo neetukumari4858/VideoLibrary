@@ -4,10 +4,17 @@ import "./SinglePlayList.css"
 
 const SinglePlayList = () => {
     const { Playlist, PlayListDispatch } = usePlayList();
+    const {playlists}=Playlist
     const { id } = useParams()
-    const playlist = Playlist?.find((playList) => {
+    const playlist = playlists?.find((playList) => {
         return playList._id == id
-    })
+    }) 
+    const deleteVideoHandler = () => {
+        deleteVideoFromPlaylist( _id, token, PlayListDispatch)
+        // getSinglePlaylist(token, setplaylistVideo, playlistId)
+      }
+
+
     return (
         <div className="single-Page-container">
             <div className="section">
@@ -18,7 +25,7 @@ const SinglePlayList = () => {
                             <div className="iconDiv">
                                 <p className="VedioLength">{videoLength}</p>
                                 <div className="icons">
-                                    <i className='fa fa-trash-o borderRadius' onClick={() => PlayListDispatch({ type: "REMOVE_VIDEO", payload:{playlist,video} })}></i>
+                                    <i className='fa fa-trash-o borderRadius' onClick={() => deleteVideoHandler(_id, token, PlayListDispatch)}></i>
                                 </div>
                             </div>
                             <img className="thumbnailImg" src={thumbnail} alt="videoImg" />
