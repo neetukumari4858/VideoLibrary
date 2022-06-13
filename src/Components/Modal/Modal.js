@@ -3,12 +3,12 @@ import { useModal } from './../../Context/ModelContext'
 import { usePlayList } from '../../Context/PlayListContext'
 import { useAuth } from '../../Context/index'
 import './Modal.css'
-import { createPlaylist, addVideoToPlaylist } from './../../services/index'
-import { v4 as uuid } from 'uuid'
+import { createPlaylist, addVideoToPlaylist ,deleteVideoFromPlaylist} from './../../services/index'
 
 const Modal = () => {
   const { ModalState, Modaldispatch } = useModal()
   const { video } = ModalState
+
   const { Playlist, PlayListDispatch } = usePlayList()
   const { playlists } = Playlist
   const [titleName, setTitle] = useState({ title: '' })
@@ -19,9 +19,9 @@ const Modal = () => {
     setTitle({ ...titleName, title: e.target.value })
   }
 
-  const playListCheckHandler = (e, _id, play) => {
-    addVideoToPlaylist(_id, play, token, PlayListDispatch)
-    // deleteVideoFromPlaylist(play._id, token, PlayListDispatch)
+  const playListCheckHandler = (_id) => {
+    addVideoToPlaylist(_id, video, token, PlayListDispatch)
+    deleteVideoFromPlaylist(_id, token, PlayListDispatch)
   }
 
   const checkPlaylist = (title) => {
@@ -41,6 +41,11 @@ const Modal = () => {
     setTitle({ ...titleName, title: '' })
   }
 
+  const checkVideoInPlaylist = (_id) => {
+    const playlist = playlists.find((item) => item._id === _id)
+    return playlist.videos.some((item) => item._id === video._id)
+  }
+
   return (
     <div className="ModalDiv">
       <div className="ModalHeader">
@@ -56,7 +61,7 @@ const Modal = () => {
         ></i>
       </div>
       <hr></hr>
-      {/* {console.log(playlists, 'playlist')} */}
+
       {playlists?.map((play) => {
         return (
           <div className="checkboxDiv" key={play?._id}>
@@ -64,7 +69,8 @@ const Modal = () => {
               <input
                 id={play?._id}
                 type="checkbox"
-                onChange={(e) => playListCheckHandler(e, play._id, play)}
+                checked={checkVideoInPlaylist(play?._id)}
+                onChange={(e) => playListCheckHandler(play._id)}
               />
               {play.title}
             </label>

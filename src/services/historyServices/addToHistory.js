@@ -7,7 +7,6 @@ const addToHistory = async (video, token, HistoryDispatch) => {
       { video },
       { headers: { authorization: token } },
     )
-    console.log(response.data.history)
     HistoryDispatch({ type: 'ADD_TO_HISTORY', payload: response.data.history })
   } catch (error) {
     console.error(error)

@@ -8,3 +8,4 @@ export {deleteHistory} from "./historyServices/deleteHistory";
 export {createPlaylist} from "./playlistServices/createPlaylist";
 export {addVideoToPlaylist} from "./playlistServices/addVideoToPlaylist";
 export {deletePlaylist } from "./playlistServices/deletePlaylist";
+export {deleteVideoFromPlaylist} from "./playlistServices/deleteVideoFromPlaylist";

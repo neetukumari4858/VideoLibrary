@@ -1,48 +1,53 @@
-import "./VideoListing.css";
-import axios from "axios";
-import { useState ,useEffect } from "react"
-import { VideoCard } from "../../Components/VideoCard/VideoCard";
+import './VideoListing.css'
+import axios from 'axios'
+import { useState, useEffect } from 'react'
+import { VideoCard } from '../../Components/VideoCard/VideoCard'
 
-const VideoListing=()=>{
-    const [productsData, setProductsData] = useState([]);
-    const [loading,setLoading]=useState(" ")
-    useEffect(()=>{
-        async function getData(){
-            setLoading("Loading....")
-            const productResponse=await axios.get('/api/videos');
-            setLoading("")
-            setProductsData(productResponse.data.videos);
-            console.log(productResponse.data.videos,"video");
-        }
-        getData();
-    },[]);
-    return (
-        <div className="product-container">
-            <h1 className="trandingVideo">Tranding Videos</h1>
-            <div className="section">
-                
-                <h3 className="loading">{loading}</h3>
-                {productsData.map(({_id,title,videoLength,thumbnail,chennelProfile,chennelName,view})=>{
-                    // <!-- console.log(_id,"_id Listing Page") -->
-                    return(
-                        <div key={_id}>
-                            <VideoCard
-                            _id={_id}
-                            title={title}
-                            videoLength={videoLength}
-                            thumbnail={thumbnail}
-                            chennelProfile={chennelProfile}
-                            chennelName={chennelName}
-                            view={view}
-                            video={productsData}
-                            />
-                        </div>
-                    )
-                })}
-            </div>
-        </div>
-    ) 
+const VideoListing = () => {
+  const [productsData, setProductsData] = useState([])
+  const [loading, setLoading] = useState(' ')
+  useEffect(() => {
+    async function getData() {
+      setLoading('Loading....')
+      const productResponse = await axios.get('/api/videos')
+      setLoading('')
+      setProductsData(productResponse.data.videos)
+    }
+    getData()
+  }, [])
+  return (
+    <div className="product-container">
+      <h1 className="trandingVideo">Tranding Videos</h1>
+      <div className="section">
+        <h3 className="loading">{loading}</h3>
+        {productsData.map(
+          ({
+            _id,
+            title,
+            videoLength,
+            thumbnail,
+            chennelProfile,
+            chennelName,
+            view,
+          }) => {
+            return (
+              <div key={_id}>
+                <VideoCard
+                  _id={_id}
+                  title={title}
+                  videoLength={videoLength}
+                  thumbnail={thumbnail}
+                  chennelProfile={chennelProfile}
+                  chennelName={chennelName}
+                  view={view}
+                  video={productsData}
+                />
+              </div>
+            )
+          },
+        )}
+      </div>
+    </div>
+  )
 }
-export { VideoListing}
-
-
+export { VideoListing }

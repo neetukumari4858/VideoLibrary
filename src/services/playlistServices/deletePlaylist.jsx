@@ -1,9 +1,9 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const deletePlaylist = async (playlistId, token, PlayListDispatch ) => {
+const deletePlaylist = async (id, token, PlayListDispatch ) => {
   try {
-    const response = await axios.delete(`/api/user/playlists/${playlistId}`, {
+    const response = await axios.delete(`/api/user/playlists/${id}`, {
       headers: { authorization: token },
     });
     PlayListDispatch ({type:"PLAYLIST_DELETE", payload:response.data.playlists})
