@@ -18,21 +18,25 @@ const PlaylistCard = () => {
       {playlists.map((item) => {
         return (
           <div className="playlistCard" key={item.videos}>
-            <div className="delete-icon-and-text">
+            <div className="playlist_text">
               <Link
                 to={`/PlaylistPage/${item._id}`}
                 className="playlistcardLink"
               >
-                <i
-                  className="fa fa-trash-o delete_icon "
-                  onClick={(e) => {
-                      e.preventDefault()
-                      deletePlaylistHandler(item._id)
-                    }}
-                ></i>
+                <h2 className="playlistName">{item.title}</h2>
               </Link>
-            <h2 className="cardTitle cardText">{item.title}</h2>
-            <h6 className="videoLength cardText">{item?.videos.length} video</h6>
+              <h6 className="videoLength cardText ">
+                {item?.videos.length} video
+              </h6>
+            </div>
+            <div className="delete_icon_div">
+              <i
+                className="fa fa-trash-o delete_icon "
+                onClick={(e) => {
+                  e.preventDefault()
+                  deletePlaylistHandler(item._id)
+                }}
+              ></i>
             </div>
           </div>
         )
