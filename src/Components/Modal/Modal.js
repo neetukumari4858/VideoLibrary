@@ -3,7 +3,7 @@ import { useModal } from './../../Context/ModelContext'
 import { usePlayList } from '../../Context/PlayListContext'
 import { useAuth } from '../../Context/index'
 import './Modal.css'
-import { createPlaylist, addVideoToPlaylist ,deleteVideoFromPlaylist} from './../../services/index'
+import { createPlaylist, addVideoToPlaylist ,deletePlaylist} from './../../services/index'
 
 const Modal = () => {
   const { ModalState, Modaldispatch } = useModal()
@@ -21,7 +21,6 @@ const Modal = () => {
 
   const playListCheckHandler = (_id) => {
     addVideoToPlaylist(_id, video, token, PlayListDispatch)
-    deleteVideoFromPlaylist(_id, token, PlayListDispatch)
   }
 
   const checkPlaylist = (title) => {

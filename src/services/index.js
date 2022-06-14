@@ -9,3 +9,5 @@ export {createPlaylist} from "./playlistServices/createPlaylist";
 export {addVideoToPlaylist} from "./playlistServices/addVideoToPlaylist";
 export {deletePlaylist } from "./playlistServices/deletePlaylist";
 export {deleteVideoFromPlaylist} from "./playlistServices/deleteVideoFromPlaylist";
+export {getPlaylist} from "./playlistServices/getPlaylist";
+export {getSinglePlaylist} from "./playlistServices/getSinglePlaylist";

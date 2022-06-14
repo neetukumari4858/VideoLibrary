@@ -10,4 +10,7 @@
 .borderRadius{
     color: var(--dark-black-color);
 }
+.emptyHeading{
+    color: red;
+}
 

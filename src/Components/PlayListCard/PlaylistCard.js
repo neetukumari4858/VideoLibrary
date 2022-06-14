@@ -1,7 +1,8 @@
 import './PlaylistCard.css'
 import { usePlayList, useAuth } from '../../Context/index'
 import { Link } from 'react-router-dom'
-import { deletePlaylist } from './../../services/index'
+import { deletePlaylist,getPlaylist } from './../../services/index'
+import { useEffect } from "react";
 
 const PlaylistCard = () => {
   const { Playlist, PlayListDispatch } = usePlayList()
@@ -9,8 +10,11 @@ const PlaylistCard = () => {
   const { userDetail } = useAuth()
   const { token } = userDetail
 
-  const deletePlaylistHandler = (id) => {
-    deletePlaylist(id, token, PlayListDispatch)
+
+  useEffect(() => getPlaylist(token, PlayListDispatch), [])
+
+  const deletePlaylistHandler = (playlistId) => {
+    deletePlaylist(playlistId, token, PlayListDispatch)
   }
 
   return (
