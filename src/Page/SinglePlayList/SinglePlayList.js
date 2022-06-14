@@ -28,7 +28,7 @@ const SinglePlayList = () => {
     <div className="single-Page-container">
       <div className="section">
         {playlistVideo ? (
-          playlistVideo?.videos?.map((video) => {
+          playlistVideo.videos?.map((video) => {
             const {
               _id,
               videoLength,
