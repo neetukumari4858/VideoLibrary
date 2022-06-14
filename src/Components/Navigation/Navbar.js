@@ -7,8 +7,9 @@ import { toast } from 'react-toastify'
 
 const Navbar = () => {
   const navigate = useNavigate()
-  const { userDetail, userDispatch } = useAuth()
-  const { token } = userDetail
+  const { userDispatch } = useAuth()
+  // const { token } = userDetail
+  const token=localStorage.getItem("token")
 
   const logoutHandler = () => {
     localStorage.removeItem('user')
