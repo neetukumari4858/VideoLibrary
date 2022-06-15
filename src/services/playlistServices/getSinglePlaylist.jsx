@@ -7,7 +7,7 @@ const getSinglePlaylist = async (token, setplaylistVideo, playlistId) => {
     })
 
     setplaylistVideo(response.data.playlist)
-    console.log(response ,"get");
+    console.log(response ,"getsingle");
   } catch (error) {
     console.error(error)
   }

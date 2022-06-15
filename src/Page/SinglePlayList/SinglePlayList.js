@@ -23,7 +23,7 @@ const SinglePlayList = () => {
     getSinglePlaylist(token, setplaylistVideo, playlistId)
   }
 
-  console.log(playlistVideo, 'play')
+  // console.log(playlistVideo, 'play')
   return (
     <div className="single-Page-container">
       <div className="section">
@@ -66,7 +66,7 @@ const SinglePlayList = () => {
             )
           })
         ) : (
-          <h1 className="emptyHeading">Playlist is Empty</h1>
+          <h1 className="emptyHeading">No videos</h1>
         )}
       </div>
     </div>
