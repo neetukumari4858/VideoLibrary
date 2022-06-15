@@ -27,6 +27,7 @@ const SignUp = () => {
                 email: newUser.email, password: newUser.password, password: newUser.password, password: newUser.password, password: newUser.password
             })
             if (response.status === 201) {
+                
                 localStorage.setItem(
                     "user", JSON.stringify(response.data.createdUser)
                 );

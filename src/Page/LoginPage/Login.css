@@ -25,9 +25,10 @@
 }
 .user-input{
     height: 2rem;
-    width: 20rem;
+    width: 19rem;
     margin-left: 0.3rem;
     border: 1px solid var(--gray-color);
+    padding-left: 0.5rem;
 }
 .create-account{
     text-align: center;
