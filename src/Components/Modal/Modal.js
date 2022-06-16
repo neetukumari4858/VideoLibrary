@@ -10,6 +10,7 @@ const Modal = () => {
   const { video } = ModalState
 
   const { Playlist, PlayListDispatch } = usePlayList()
+
   const { playlists } = Playlist
   const [titleName, setTitle] = useState({ title: '' })
   const { userDetail } = useAuth()

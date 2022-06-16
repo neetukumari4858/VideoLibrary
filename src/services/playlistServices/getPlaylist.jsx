@@ -9,7 +9,6 @@ const getPlaylist = async (token, PlayListDispatch) => {
       type: 'CREATE_PLAYLIST',
       payload: response.data.playlists,
     })
-    console.log(response ,"getplaylist");
   } catch (error) {
     console.error(error)
   }

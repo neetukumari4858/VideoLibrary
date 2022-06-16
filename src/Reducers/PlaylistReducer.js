@@ -1,7 +1,7 @@
 const newPlaylist = (playlistId, playlists, playlistData) => {
   return playlists.reduce(
     (acc, cur) =>
-      cur._id ===playlistId ? [...acc, playlistData] : [...acc, cur],
+      cur._id === playlistId ? [...acc, playlistData] : [...acc, cur],
     [],
   )
 }
@@ -12,7 +12,7 @@ const PlayListReducer = (playlistState, playlistAction) => {
     case 'CREATE_PLAYLIST':
       return { ...playlistState, playlists: playlistAction.payload }
 
-    case 'ADD_TO_PLAYLIST':
+    case 'ADD_VIDEO_TO_PLAYLIST':
       return {
         ...playlistState,
         playlists: newPlaylist(

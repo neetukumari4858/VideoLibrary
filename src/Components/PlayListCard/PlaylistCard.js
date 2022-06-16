@@ -10,29 +10,20 @@ const PlaylistCard = () => {
   const { userDetail } = useAuth()
   const { token } = userDetail
 
-  useEffect(() => getPlaylist(token, PlayListDispatch), [])
-
   const deletePlaylistHandler = (playlistId) => {
     deletePlaylist(playlistId, token, PlayListDispatch)
   }
-
-  const singlePlaylistHandler = (videos) => {
-    PlayListDispatch({ type: 'VIDEO_TO_SINGLE_PLAYLIST_PAGE', payload: videos })
-  }
+  useEffect(() => getPlaylist(token, PlayListDispatch), [])
 
   return (
     <>
       {playlists.map((item) => {
-        {console.log(playlists,"playlist");}
         return (
           <div className="playlistCard" key={item.videos}>
-            {/* {console.log(item.videos,"yi")} */}
             <div className="playlist_text">
               <Link
                 to={`/PlaylistPage/${item._id}`}
                 className="playlistcardLink"
-                
-                onClick={() => singlePlaylistHandler(item.videos)}
               >
                 <h2 className="playlistName">{item.title}</h2>
               </Link>

@@ -8,7 +8,7 @@ const addVideoToPlaylist = async (playlistId, video, token, PlayListDispatch) =>
       { headers: { authorization: token } }
     );
     PlayListDispatch({
-      type: "ADD_TO_PLAYLIST",
+      type: "ADD_VIDEO_TO_PLAYLIST",
       payload: {
         playlistId: response.data.playlist._id,
         playlistData: response.data.playlist,

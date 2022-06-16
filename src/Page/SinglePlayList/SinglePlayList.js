@@ -9,21 +9,19 @@ import './SinglePlayList.css'
 import { useState, useEffect } from 'react'
 
 const SinglePlayList = () => {
-  const { Playlist, PlayListDispatch } = usePlayList()
+  const { PlayListDispatch } = usePlayList()
   const { playlistId } = useParams()
   const [playlistVideo, setplaylistVideo] = useState(null)
 
   const { userDetail } = useAuth()
   const { token } = userDetail
 
-  useEffect(() => getSinglePlaylist(token, setplaylistVideo, playlistId), [])
-
   const deleteVideoHandler = (_id) => {
     deleteVideoFromPlaylist(_id, playlistId, token, PlayListDispatch)
     getSinglePlaylist(token, setplaylistVideo, playlistId)
   }
+  useEffect(() => getSinglePlaylist(token, setplaylistVideo, playlistId), [])
 
-  // console.log(playlistVideo, 'play')
   return (
     <div className="single-Page-container">
       <div className="section">
