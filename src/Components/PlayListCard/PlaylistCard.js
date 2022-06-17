@@ -25,11 +25,11 @@ const PlaylistCard = () => {
                 to={`/PlaylistPage/${item._id}`}
                 className="playlistcardLink"
               >
-                <h2 className="playlistName">{item.title}</h2>
+                <p className="playlistName">{item.title}</p>
               </Link>
-              <h6 className="videoLength cardText ">
+              <p className="videoLength">
                 {item?.videos.length} video
-              </h6>
+              </p>
             </div>
             <div className="delete_icon_div">
               <i

@@ -1,45 +1,32 @@
 @import "./../../style.css";
-
 .playlistCard {
+  width: 17rem;
   height: 6rem;
-  width: 15rem;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   background-color: var(--gray-text-color);
   border-radius: 0.5rem;
+  color:var(--white-color);
 }
-
 .playlistcardLink {
   text-decoration: transparent;
 }
-.cardText {
-  color: white;
-}
 
-.playlist_text {
-  height: 3.5rem;
-  width: 10rem;
-
-  display: flex;
-  flex-direction: row;
-
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.delete_icon_div {
-  height: 3.2rem;
-  width: 2rem;
+.delete_icon {
   font-size: x-large;
   cursor: pointer;
+  margin-bottom: 2rem;
 }
 .playlistName {
-  margin-top: -0.3rem;
-  color: white;
+  color: var(--white-color);
+  font-size: 1.7rem;
+}
+.playlist_text {
+  padding-left: 1rem;
+  margin-top: -1rem;
 }
 .videoLength {
-  position: relative;
-  font-size: 1rem;
-  left: -3rem;
-  top: 6rem;
+  margin-top: -1rem;
 }
