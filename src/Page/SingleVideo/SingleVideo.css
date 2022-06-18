@@ -1,0 +1,55 @@
+@import url("../../style.css");
+
+.single_video-page{
+    height: 37rem;
+    width:67rem;
+    margin-left: 14rem;
+    margin-top: -40rem;
+    /* border: 1px solid red; */
+    background-color:var(--dark-black-color);
+}
+.Video_section{
+    margin-top: 2rem;
+}
+
+.footer_div{
+    height: 9rem;
+    width:65%;
+    /* border: 1px solid red; */
+    margin-top: -2rem;
+    color: var(--white-color);
+    font-size: 0.7rem;
+}
+.footer_icons-div{
+    width: 10rem;
+    height: 2rem;
+    align-items: flex-start;
+    /* border: 1px solid red; */
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+
+
+}
+.footer_video-content{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -2rem;
+    border-bottom: 1px solid var(--white-color);
+
+}
+.thumnail_text{
+    color:  var(--white-color);
+    width: 42rem;
+    font-size: 1rem;
+    font-weight: 800;
+    /* border: 1px solid red; */
+}
+.thumnail_channelName{
+    font-size: 0.8rem;
+}
+/* .text-size{
+} */
+/* .footer_line{
+    margin-top: -0.5rem;
+} */

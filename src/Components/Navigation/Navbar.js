@@ -8,7 +8,6 @@ import { toast } from 'react-toastify'
 const Navbar = () => {
   const navigate = useNavigate()
   const { userDispatch } = useAuth()
-  // const { token } = userDetail
   const token=localStorage.getItem("token")
 
   const logoutHandler = () => {
@@ -24,9 +23,6 @@ const Navbar = () => {
         <label className="logo">Royalplay</label>
       </div>
       <div className="nav-section">
-        <div className="outer-search-bar-div">
-          <input type="text" className="search-bar" placeholder="   Search.." />
-        </div>
         {token ? (
           <button className="login-btn text-color" onClick={logoutHandler}>
             Logout

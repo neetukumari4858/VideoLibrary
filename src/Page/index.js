@@ -6,4 +6,5 @@ export {WatchList} from "./WatchList/WatctList";
 export {Liked} from "./LikedPage/Liked";
 export {History} from "./History/History";
 export {Playlist} from "./PlayList/Playlist";
-export {SinglePlayList} from "./SinglePlayList/SinglePlayList"
+export {SinglePlayList} from "./SinglePlayList/SinglePlayList";
+export {SingleVideo} from "./SingleVideo/SingleVideo";

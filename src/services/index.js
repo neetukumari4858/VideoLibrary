@@ -11,3 +11,4 @@ export {deletePlaylist } from "./playlistServices/deletePlaylist";
 export {deleteVideoFromPlaylist} from "./playlistServices/deleteVideoFromPlaylist";
 export {getPlaylist} from "./playlistServices/getPlaylist";
 export {getSinglePlaylist} from "./playlistServices/getSinglePlaylist";
+export {getSingleVideo} from "./videoServices/getSingleVideo";

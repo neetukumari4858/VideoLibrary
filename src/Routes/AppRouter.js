@@ -1,4 +1,4 @@
-import {Home,VideoListing ,Login ,SignUp,WatchList,Liked,History ,Playlist,SinglePlayList } from "./../Page/index"
+import {Home,VideoListing ,Login ,SignUp,WatchList,Liked,History ,Playlist,SinglePlayList,SingleVideo} from "./../Page/index"
 import { Route, Routes} from "react-router-dom";
 import {RequireAuth} from "./../RequireAuth";
 const AppRouter=()=>{
@@ -12,6 +12,7 @@ const AppRouter=()=>{
             <Route path="/HistoryPage" element={<RequireAuth> <History /></RequireAuth>}/>
             <Route path="/PlaylistPage" element={<RequireAuth> <Playlist /></RequireAuth>}/>
             <Route path="/PlaylistPage/:playlistId" element={<RequireAuth> <SinglePlayList/></RequireAuth>}/>
+            <Route path="/VideoListing/:videoId" element={<RequireAuth> <SingleVideo /></RequireAuth>}/>
             <Route path="/loginPage" element={ <Login/>}/>
             <Route path="/SignUpPage" element={ <SignUp/>}/>
         </Routes>

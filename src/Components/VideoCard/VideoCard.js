@@ -15,6 +15,7 @@ import {
 } from './../../services/index'
 import { BsBookmark, BsFillBookmarkFill } from 'react-icons/bs'
 import { RiPlayList2Fill } from 'react-icons/ri'
+import { useNavigate } from 'react-router-dom'
 
 const VideoCard = ({
   _id,
@@ -35,6 +36,8 @@ const VideoCard = ({
   const { userDetail } = useAuth()
   const { token } = userDetail
 
+  const navigate=useNavigate()
+
   const selectedVideo = video.find((item) => item._id === _id)
   const likeVideoHandler = () => {
     if (token) {
@@ -43,7 +46,7 @@ const VideoCard = ({
       navigate('/loginPage')
       alert('login first')
     }
-  }
+  } 
 
   const deleteVideoHandler = () => {
     deleteLiked(_id, token, likedDispatch)
@@ -113,7 +116,12 @@ const VideoCard = ({
             </i>
           </div>
         </div>
-        <img className="thumbnailImg" src={thumbnail} alt="videoImg" />
+        <img
+          className="thumbnailImg"
+          src={thumbnail}
+          alt="videoImg"
+          onClick={() => navigate(`/VideoListing/${_id}`)}
+        />
         <div className="cardText">
           <img
             className="chennelProfile"
