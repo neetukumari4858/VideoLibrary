@@ -1,4 +1,5 @@
 import React from 'react'
+
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../Context/AuthContext'
@@ -8,7 +9,7 @@ import { toast } from 'react-toastify'
 const Navbar = () => {
   const navigate = useNavigate()
   const { userDispatch } = useAuth()
-  const token=localStorage.getItem("token")
+  const token = localStorage.getItem('token')
 
   const logoutHandler = () => {
     localStorage.removeItem('user')

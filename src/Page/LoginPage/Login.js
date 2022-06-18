@@ -86,7 +86,7 @@ const Login = () => {
             }
           >
             {inputType === 'text' ? (
-               <p className="hideIcon">
+              <p className="hideIcon">
                 <AiFillEye />
               </p>
             ) : (
@@ -95,7 +95,6 @@ const Login = () => {
               </p>
             )}
           </div>
-
 
           <div className="footerDiv">
             <div className="login-grid">

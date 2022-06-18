@@ -8,8 +8,9 @@
   align-items: center;
   background-color: var(--gray-text-color);
   border-radius: 0.5rem;
-  color:var(--white-color);
+  color: var(--white-color);
 }
+
 .playlistcardLink {
   text-decoration: transparent;
 }

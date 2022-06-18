@@ -27,9 +27,7 @@ const PlaylistCard = () => {
               >
                 <p className="playlistName">{item.title}</p>
               </Link>
-              <p className="videoLength">
-                {item?.videos.length} video
-              </p>
+              <p className="videoLength">{item?.videos.length} video</p>
             </div>
             <div className="delete_icon_div">
               <i
