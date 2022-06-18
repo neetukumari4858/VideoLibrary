@@ -1,77 +1,92 @@
 @import url("../../style.css");
 
-.outer-Login-container{
-    height: 37.2rem;
-    width:67rem;
-    margin: -37.2rem 0 0 14rem;
-    background-color:var(--dark-black-color) ;
-    display: flex;
-    justify-content: center;
-}
-.login-outer-container{
-    height: 23rem;
-    width: 23rem;
-    margin-top: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 1px 1px 1px 2px var(--dark-gray-color);
-    border: 1px solid gainsboro;
-}
-.login-content-container{
-    height: 23rem;
-    width: 21rem;
-    color:var(--white-color); 
-}
-.user-input{
-    height: 2rem;
-    width: 20rem;
-    margin-left: 0.3rem;
-    border: 1px solid var(--gray-color);
-}
-.create-account{
-    text-align: center;
-    margin-top: 1rem;
-    color:var(--white-color);
-}
-.Login-heading-two{
-    text-align: center;
-    color:var(--white-color);
-}
-.fa-angle-right{
-    color:var(--white-color);
-    margin:-1.2rem 2rem;
-}
-.videologin-btn{
-    padding: 0.7rem 9rem;
-    margin-top: 1.5rem;
-    background-color: var(--red-color);
-    border: transparent;
-    border-radius: 0.2rem;
-    color: var(--white-color);
-    font-weight: 900;
-    margin-left: 0.5rem;
-    cursor: pointer;
-}
-.forgotPasswodText{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.5rem;
-}
-.lebel-text{
-    display: flex;
-    justify-content: flex-start;
-    margin: 0.7rem ;
+.outer-Login-container {
+  height: 37.2rem;
+  width: 67rem;
+  margin: -37.2rem 0 0 14rem;
+  background-color: var(--dark-black-color);
+  display: flex;
+  justify-content: center;
 }
 
-.remember-me{
-    margin-left: -4rem;
-    
+.login-outer-container {
+  height: 25rem;
+  width: 23rem;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 1px 2px var(--dark-gray-color);
+  border: 1px solid var(--gainboro-color);
 }
-.forgotPassword{
-    color:var(--blue-color);
-    text-decoration: none;
+.login-content-container {
+  height: 23rem;
+  width: 21rem;
+  color: var(--white-color);
+  margin-top: -0.5rem;
 }
-.createColor{
-    color: var(--white-color);
+.user-input {
+  height: 2rem;
+  width: 19.7rem;
+  padding-left: 0.8rem;
+  border-radius: 0.2rem;
+  border: 1px solid var(--gray-color);
 }
+.create-account {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--black-color);
+}
+.Login-heading-two {
+  text-align: center;
+  color: var(--black-color);
+}
+.videologin-btn {
+  background-color: var(--red-color);
+  border: transparent;
+  border-radius: 0.2rem;
+  color: var(--white-color);
+  font-weight: 900;
+  cursor: pointer;
+}
+.videologin-btn:hover {
+  background-color: var(--red-hover-color);
+}
+
+.lebel-text {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.7rem;
+  font-size: 1.2rem;
+  color: var(--black-color);
+}
+
+.createAccount {
+  text-decoration: none;
+  font-size: 1rem;
+  /* position: relative; */
+  color: var(--black-color);
+}
+
+.hideIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: red;
+  position:relative;
+  left: 8.3rem;
+  top: -3rem;
+}
+
+.footerDiv {
+  margin-top: -2.5rem;
+}
+.login-grid {
+  display: grid;
+  grid-template-columns: 21rem;
+  grid-template-rows: 2.3rem 2.3rem;
+  grid-row-gap: 1rem;
+  margin-top: 2.2rem;
+}
+

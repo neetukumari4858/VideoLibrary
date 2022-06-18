@@ -1,37 +1,47 @@
-import "./PlaylistCard.css";
-import { usePlayList } from "../../Context/PlayListContext";
-import { Link } from "react-router-dom";
+import './PlaylistCard.css'
+import { usePlayList, useAuth } from '../../Context/index'
+import { Link } from 'react-router-dom'
+import { deletePlaylist, getPlaylist } from './../../services/index'
+import { useEffect } from 'react'
 
 const PlaylistCard = () => {
-  const { Playlist, PlayListDispatch } = usePlayList();
+  const { Playlist, PlayListDispatch } = usePlayList()
+  const { playlists } = Playlist
+  const { userDetail } = useAuth()
+  const { token } = userDetail
+
+  const deletePlaylistHandler = (playlistId) => {
+    deletePlaylist(playlistId, token, PlayListDispatch)
+  }
+  useEffect(() => getPlaylist(token, PlayListDispatch), [])
+
   return (
     <>
-      {Playlist.map((item) => {
+      {playlists.map((item) => {
         return (
-          <div className="playlistCard" key={item._id}>
-            <div className="delete-icon-and-text">
+          <div className="playlistCard" key={item.videos}>
+            <div className="playlist_text">
               <Link
                 to={`/PlaylistPage/${item._id}`}
                 className="playlistcardLink"
               >
-                <h2 className="cardTitle ">{item.title}</h2>
-                <i
-                  className="fa fa-trash-o delete "
-                  onClick={(e) => {
-                    e.preventDefault();
-                    PlayListDispatch({
-                      type: "REMOVE_PLAYLIST",
-                      payload: item._id,
-                    });
-                  }}
-                ></i>
+                <p className="playlistName">{item.title}</p>
               </Link>
+              <p className="videoLength">{item?.videos.length} video</p>
             </div>
-            <h6 className="videoLength cardText">{item.videos.length} video</h6>
+            <div className="delete_icon_div">
+              <i
+                className="fa fa-trash-o delete_icon "
+                onClick={(e) => {
+                  e.preventDefault()
+                  deletePlaylistHandler(item._id)
+                }}
+              ></i>
+            </div>
           </div>
-        );
+        )
       })}
     </>
-  );
-};
-export { PlaylistCard };
+  )
+}
+export { PlaylistCard }

@@ -1,22 +1,19 @@
-const HistoryReducer=(HistoryState,action)=>{
-    const {HistoryVideos} =HistoryState;
-    // const HistoryItem = HistoryVideos.find((HistoryPageItems) => HistoryPageItems._id === action.payload._id)
-    switch (action.type) {
-        case "ADD_TO_HISTORY":
-            return {...HistoryState, HistoryVideos:[...HistoryVideos,{...action.payload}]};
+const HistoryReducer = (HistoryState, historyAction) => {
+  const { HistoryVideos } = HistoryState
 
-        case "REMOVE_FROM_HISTORY":
-        return {
-            ...HistoryState,
-            HistoryVideos: [...HistoryVideos.filter((removeItem) => removeItem._id !== action.payload._id)]
-          };
-        case "CLEAR_ALL":
-            HistoryVideos.length = 0
-            return { ...HistoryState,
-                HistoryVideos: HistoryVideos
-            }
-        default:
-            return HistoryState
-    }
+  switch (historyAction.type) {
+    case 'ADD_TO_HISTORY':
+      return { ...HistoryState, HistoryVideos: historyAction.payload }
+
+    case 'DELETE_HISTORY':
+      return {
+        ...HistoryState,
+        HistoryVideos: historyAction.payload,
+      }
+    case 'DELETE_ALL_HISTORY':
+      return { ...HistoryState, HistoryVideos: historyAction.payload }
+    default:
+      return HistoryState
+  }
 }
-export {HistoryReducer}
+export { HistoryReducer }

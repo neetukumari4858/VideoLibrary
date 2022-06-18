@@ -41,13 +41,15 @@
 }
 .login-btn {
     position: relative;
-    left: 28rem;
-    top: -2rem;
+    left: -4rem;
+    bottom: -0.4rem;
     padding: 0.5rem 1rem;
     background-color: var(--red-color);
     border: none;
     border-radius: 0.2rem;
+
 }
 .text-color{
     color: var(--white-color);
+    cursor: pointer;
 }
