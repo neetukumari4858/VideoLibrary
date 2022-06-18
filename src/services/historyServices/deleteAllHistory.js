@@ -1,12 +1,11 @@
 import axios from 'axios'
 
-const deleteAllHistory = async (token,HistoryDispatch) => {
+const deleteAllHistory = async (token, HistoryDispatch) => {
   try {
     const response = await axios.delete('/api/user/history/all', {
       headers: { authorization: token },
     })
-    console.log(response,"alldelete");
-   HistoryDispatch({
+    HistoryDispatch({
       type: 'DELETE_ALL_HISTORY',
       payload: response.data.history,
     })

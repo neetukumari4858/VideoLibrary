@@ -1,5 +1,6 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { usePlayList, useAuth } from './../../Context/index'
+
 
 import {
   deleteVideoFromPlaylist,
@@ -15,6 +16,7 @@ const SinglePlayList = () => {
 
   const { userDetail } = useAuth()
   const { token } = userDetail
+  const navigate=useNavigate()
 
   const deleteVideoHandler = (_id) => {
     deleteVideoFromPlaylist(_id, playlistId, token, PlayListDispatch)
@@ -47,7 +49,9 @@ const SinglePlayList = () => {
                     ></i>
                   </div>
                 </div>
-                <img className="thumbnailImg" src={thumbnail} alt="videoImg" />
+                <img className="thumbnailImg" src={thumbnail} alt="videoImg" 
+                onClick={() => navigate(`/VideoListing/${_id}`)
+                }/>
                 <div className="cardText">
                   <img
                     className="chennelProfile"

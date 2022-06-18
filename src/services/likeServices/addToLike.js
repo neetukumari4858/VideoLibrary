@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'
 
 const addToLike = async (video, token, likedDispatch) => {
   try {
@@ -12,4 +12,4 @@ const addToLike = async (video, token, likedDispatch) => {
     console.log(error)
   }
 }
-export{addToLike}
+export { addToLike }

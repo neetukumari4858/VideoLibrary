@@ -32,7 +32,7 @@
   margin: 0.8rem 0 0 -0.2rem;
 }
 .sign-btn {
-  padding: 0.5rem 7.3rem;
+  padding: 0.5rem 7.8rem;
   border: transparent;
   margin-top: 1rem;
   border-radius: 0.3rem;
@@ -62,4 +62,14 @@
 }
 .confirm-Password {
   margin-top: -2.7rem;
+}
+.signup_hideIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: red;
+  position:relative;
+  left: -8.3rem;
+  top: -0.3rem;
 }

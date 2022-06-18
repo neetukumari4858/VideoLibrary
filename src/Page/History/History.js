@@ -1,6 +1,7 @@
 import './History.css'
 import { useHistory, useAuth } from '../../Context/index'
 import { deleteAllHistory, deleteHistory } from './../../services/index'
+import { useNavigate } from 'react-router-dom'
 
 const History = () => {
   const { HistoryState, HistoryDispatch } = useHistory()
@@ -8,6 +9,7 @@ const History = () => {
 
   const { userDetail } = useAuth()
   const { token } = userDetail
+  const navigate = useNavigate()
 
   const deleteHistoryHandler = (_id) => {
     deleteHistory(_id, token, HistoryDispatch)
@@ -47,7 +49,12 @@ const History = () => {
                     ></i>
                   </div>
                 </div>
-                <img className="thumbnailImg" src={thumbnail} alt="videoImg" />
+                <img
+                  className="thumbnailImg"
+                  src={thumbnail}
+                  alt="videoImg"
+                  onClick={() => navigate(`/VideoListing/${_id}`)}
+                />
                 <div className="cardText">
                   <img
                     className="chennelProfile"

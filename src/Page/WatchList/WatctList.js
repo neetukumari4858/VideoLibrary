@@ -2,6 +2,7 @@ import './WatchList.css'
 import { useWatchlist, useAuth } from './../../Context/index'
 import { deleteWatchLater } from '../../services/index'
 import { BsFillBookmarkFill } from 'react-icons/bs'
+import { useNavigate } from 'react-router-dom'
 
 const WatchList = () => {
   const { watchlistState, watchlistDispatch } = useWatchlist()
@@ -9,6 +10,7 @@ const WatchList = () => {
 
   const { userDetail } = useAuth()
   const { token } = userDetail
+  const navigate = useNavigate()
 
   const deleteWatchLaterHandler = (_id) => {
     deleteWatchLater(_id, token, watchlistDispatch)
@@ -41,7 +43,12 @@ const WatchList = () => {
                     </i>
                   </div>
                 </div>
-                <img className="thumbnailImg" src={thumbnail} alt="videoImg" />
+                <img
+                  className="thumbnailImg"
+                  src={thumbnail}
+                  alt="videoImg"
+                  onClick={() => navigate(`/VideoListing/${_id}`)}
+                />
                 <div className="cardText">
                   <img
                     className="chennelProfile"

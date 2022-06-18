@@ -16,6 +16,7 @@ import {
 import { BsBookmark, BsFillBookmarkFill } from 'react-icons/bs'
 import { RiPlayList2Fill } from 'react-icons/ri'
 import { useNavigate } from 'react-router-dom'
+import { AiFillLike, AiOutlineLike } from 'react-icons/ai'
 
 const VideoCard = ({
   _id,
@@ -36,7 +37,7 @@ const VideoCard = ({
   const { userDetail } = useAuth()
   const { token } = userDetail
 
-  const navigate=useNavigate()
+  const navigate = useNavigate()
 
   const selectedVideo = video.find((item) => item._id === _id)
   const likeVideoHandler = () => {
@@ -46,7 +47,7 @@ const VideoCard = ({
       navigate('/loginPage')
       alert('login first')
     }
-  } 
+  }
 
   const deleteVideoHandler = () => {
     deleteLiked(_id, token, likedDispatch)
@@ -88,15 +89,13 @@ const VideoCard = ({
           <p className="VedioLength">{videoLength}</p>
           <div className="icons">
             {likedVideos.some((item) => item._id === _id) ? (
-              <i
-                className="fas fa-thumbs-up  videoEachIcon"
-                onClick={deleteVideoHandler}
-              ></i>
+              <i className="  videoEachIcon" onClick={deleteVideoHandler}>
+                <AiFillLike />
+              </i>
             ) : (
-              <i
-                className="far fa-thumbs-up videoEachIcon "
-                onClick={likeVideoHandler}
-              ></i>
+              <i className="videoEachIcon " onClick={likeVideoHandler}>
+                <AiOutlineLike />
+              </i>
             )}
             {watchListVideos.some((item) => item._id === _id) ? (
               <i className="videoEachIcon" onClick={deleteWatchLaterHandler}>

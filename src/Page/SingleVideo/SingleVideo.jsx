@@ -21,14 +21,12 @@ import {
 import { BsFillBookmarkFill } from "react-icons/bs";
 import { BsBookmark } from "react-icons/bs";
 import { RiPlayList2Fill } from "react-icons/ri";
+import { AiFillLike, AiOutlineLike } from "react-icons/ai";
 
 const SingleVideo = () => {
   const [video, setVideo] = useState({});
   const { videoId } = useParams();
 
-  
-  //   const selectedVideo = video.find((item) => item._id === _id);
-  
   const { HistoryDispatch } = useHistory();
   const { likedState, likedDispatch } = useLiked();
   const { likedVideos } = likedState;
@@ -38,55 +36,49 @@ const SingleVideo = () => {
   const { userDetail } = useAuth();
   const { token } = userDetail;
 
-
-  
   useEffect(() => getSingleVideo(videoId, setVideo), []);
 
-//   const selectedVideo = video.find((item) => item._id === _id)
-
-  
   const deleteVideoHandler = (_id) => {
     deleteLiked(_id, token, likedDispatch);
   };
 
   const likeVideoHandler = () => {
     if (token) {
-        addToLike(video, token, likedDispatch);
+      addToLike(video, token, likedDispatch);
     } else {
       navigate("/loginPage");
       alert("login first");
     }
-};
-const deleteWatchLaterHandler = (_id) => {
+  };
+  const deleteWatchLaterHandler = (_id) => {
     deleteWatchLater(_id, token, watchlistDispatch);
-};
+  };
 
-const watchLaterHandler = () => {
+  const watchLaterHandler = () => {
     if (token) {
-        //   const videos = video.find((item) => item._id === _id);
-        addToWatchLater(video, token, watchlistDispatch);
+      addToWatchLater(video, token, watchlistDispatch);
     } else {
-        navigate("/loginPage");
-        alert("login first");
+      navigate("/loginPage");
+      alert("login first");
     }
-};
+  };
 
-const playlistHandler = () => {
+  const playlistHandler = () => {
     if (token) {
-        Modaldispatch({
-            type: "Modal",
-            payload: { status: true, video: video },
-        });
+      Modaldispatch({
+        type: "Modal",
+        payload: { status: true, video: video },
+      });
     } else {
-        navigate("/LoginPage");
-        alert("Please login to use these features!");
+      navigate("/LoginPage");
+      alert("Please login to use these features!");
     }
-};
+  };
 
-const addToHistoryHandler = () => {
-  addToHistory(video, token, HistoryDispatch);
-};
-return (
+  const addToHistoryHandler = () => {
+    addToHistory(video, token, HistoryDispatch);
+  };
+  return (
     <div className="single_video-page">
       <div className="section ">
         <ReactPlayer
@@ -104,21 +96,28 @@ return (
             <div className="footer_icons-div">
               {likedVideos.some((item) => item._id === video._id) ? (
                 <i
-                  className="fas fa-thumbs-up  videoEachIcon"
-                  onClick={(e)=>deleteVideoHandler(video._id)}
-                ></i>
+                  className="  videoEachIcon"
+                  onClick={(e) => deleteVideoHandler(video._id)}
+                >
+                  <AiFillLike />
+                </i>
               ) : (
-                <i
-                  className="far fa-thumbs-up videoEachIcon "
-                  onClick={likeVideoHandler}
-                ></i>
+                <i className="videoEachIcon " onClick={likeVideoHandler}>
+                  <AiOutlineLike />
+                </i>
               )}
               {watchListVideos.some((item) => item._id === video._id) ? (
-                <i className="videoEachIcon" onClick={()=>deleteWatchLaterHandler(video._id)}>
+                <i
+                  className="videoEachIcon"
+                  onClick={() => deleteWatchLaterHandler(video._id)}
+                >
                   <BsFillBookmarkFill />
                 </i>
               ) : (
-                <i className="videoEachIcon" onClick={()=>watchLaterHandler()}>
+                <i
+                  className="videoEachIcon"
+                  onClick={() => watchLaterHandler()}
+                >
                   <BsBookmark />
                 </i>
               )}

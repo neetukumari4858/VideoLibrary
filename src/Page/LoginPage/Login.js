@@ -22,7 +22,7 @@ const Login = () => {
         email,
         password,
       })
-      console.log(response, 'res')
+
       if (response.status === 200) {
         localStorage.setItem('user', JSON.stringify(response.data.foundUser))
         const token = response.data.encodedToken
@@ -79,7 +79,6 @@ const Login = () => {
             required
           />
           <div
-            className="passwordIcon"
             onClick={() =>
               inputType === 'text'
                 ? setinputType('password')
@@ -87,15 +86,17 @@ const Login = () => {
             }
           >
             {inputType === 'text' ? (
-              <p>
+               <p className="hideIcon">
                 <AiFillEye />
               </p>
             ) : (
-              <p>
+              <p className="hideIcon">
                 <AiFillEyeInvisible />
               </p>
             )}
           </div>
+
+
           <div className="footerDiv">
             <div className="login-grid">
               <button

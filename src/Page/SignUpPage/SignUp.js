@@ -38,14 +38,6 @@ const SignUp = () => {
       if (checkPolicy) {
         if (password === confirmPassword) {
           try {
-            console.log(
-              email,
-              password,
-              firstName,
-              confirmPassword,
-              lastName,
-              'data',
-            )
             const response = await axios.post('/api/auth/signup', {
               email,
               password,
@@ -53,11 +45,10 @@ const SignUp = () => {
               confirmPassword,
               lastName,
             })
-            navigate('/')
+            navigate('/VideoListing')
             toast.success(
               'Congratulations, your account has been successfully created!',
             )
-            console.log(response.data.createdUser, 'createduser')
             if (response.status === 201) {
               localStorage.setItem(
                 'user',
@@ -149,11 +140,11 @@ const SignUp = () => {
             }
           >
             {inputType === 'text' ? (
-              <p>
+              <p className="signup_hideIcon">
                 <AiFillEye />
               </p>
             ) : (
-              <p>
+              <p className="signup_hideIcon">
                 <AiFillEyeInvisible />
               </p>
             )}

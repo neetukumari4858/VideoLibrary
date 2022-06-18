@@ -1,12 +1,15 @@
 import './Liked.css'
 import { deleteLiked } from '../../services/index'
 import { useAuth, useLiked } from '../../Context/index'
+import { useNavigate } from 'react-router-dom'
+import { AiFillLike } from 'react-icons/ai'
 
 const Liked = () => {
   const { likedState, likedDispatch } = useLiked()
   const { likedVideos } = likedState
   const { userDetail } = useAuth()
   const { token } = userDetail
+  const navigate = useNavigate()
 
   const unlikeHandler = (_id) => {
     deleteLiked(_id, token, likedDispatch)
@@ -31,12 +34,19 @@ const Liked = () => {
                   <p className="VedioLength">{videoLength}</p>
                   <div className="icons">
                     <i
-                      className="fas fa-thumbs-up  videoEachIcon"
+                      className=" videoEachIcon"
                       onClick={(e) => unlikeHandler(_id)}
-                    ></i>
+                    >
+                      <AiFillLike />
+                    </i>
                   </div>
                 </div>
-                <img className="thumbnailImg" src={thumbnail} alt="videoImg" />
+                <img
+                  className="thumbnailImg"
+                  src={thumbnail}
+                  alt="videoImg"
+                  onClick={() => navigate(`/VideoListing/${_id}`)}
+                />
                 <div className="cardText">
                   <img
                     className="chennelProfile"
