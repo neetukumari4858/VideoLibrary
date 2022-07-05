@@ -1,6 +1,6 @@
 @import "./../../style.css";
 .sidebar{
-    height: 37rem;
+    height: 100vh;
     width: 14rem;
     border: 1px solid var(--dark-black-color);
     overflow: auto;
