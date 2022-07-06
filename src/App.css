@@ -1,6 +1,10 @@
+body{
+  background-color: var(--light-black-color);
+}
 .App {
-  /* text-align: center; */
   overflow-x: hidden;
+  width: 100%;
+  height: 100vh;
 }
 li{
   cursor: pointer;
@@ -8,3 +12,5 @@ li{
 button{
   cursor: pointer;
 }
+
+

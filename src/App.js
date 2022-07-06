@@ -28,7 +28,7 @@ function App() {
       {openCloseModal && <Modal />}
       <div className="App">
         <Navbar />
-        <Sidebar />
+        {/* <Sidebar /> */}
         <AppRouter />
       </div>
     </>
