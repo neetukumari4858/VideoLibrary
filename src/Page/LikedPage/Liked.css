@@ -2,10 +2,9 @@
 
 .Liked-Page-container{
     height: 37rem;
-    width:67rem;
-    margin-left: 14rem;
-    margin-top: -38.5rem;
-    background-color:var(--dark-black-color);
+    display: flex;
+    background-color: var(--light-black-color);
+    background-color: var(--dark-black-color);
 }
 .Liked{
     color: var(--white-color);

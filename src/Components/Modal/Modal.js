@@ -3,9 +3,18 @@ import { useModal } from './../../Context/ModelContext'
 import { usePlayList } from '../../Context/PlayListContext'
 import { useAuth } from '../../Context/index'
 import './Modal.css'
-import { createPlaylist, addVideoToPlaylist ,deletePlaylist} from './../../services/index'
+import { useParams } from 'react-router-dom'
+
+import {
+  createPlaylist,
+  addVideoToPlaylist,
+  deleteVideoFromPlaylist,
+} from './../../services/index'
 
 const Modal = () => {
+  const { playlistId } = useParams()
+  console.log(playlistId, 'idasnck')
+
   const { ModalState, Modaldispatch } = useModal()
   const { video } = ModalState
 
@@ -20,8 +29,13 @@ const Modal = () => {
     setTitle({ ...titleName, title: e.target.value })
   }
 
-  const playListCheckHandler = (_id) => {
-    addVideoToPlaylist(_id, video, token, PlayListDispatch)
+  const playListCheckHandler = (e, _id) => {
+    const checkVideo = e.target.checked
+    if (checkVideo) {
+      addVideoToPlaylist(_id, video, token, PlayListDispatch)
+    } else {
+      deleteVideoFromPlaylist(_id, playlistId, token, PlayListDispatch)
+    }
   }
 
   const checkPlaylist = (title) => {
@@ -41,9 +55,9 @@ const Modal = () => {
     setTitle({ ...titleName, title: '' })
   }
 
-  const checkVideoInPlaylist = (_id) => {
-    const playlist = playlists.find((item) => item._id === _id)
-    return playlist.videos.some((item) => item._id === video._id)
+  const checkVideoInPlaylist = (videos) => {
+    const checkVideo = videos.some((item) => item._id === video._id)
+    return checkVideo
   }
 
   return (
@@ -63,14 +77,15 @@ const Modal = () => {
       <hr></hr>
 
       {playlists?.map((play) => {
+        console.log(play, 'play')
         return (
           <div className="checkboxDiv" key={play?._id}>
             <label htmlFor={play?._id} className="PlayListcheckbox">
               <input
                 id={play?._id}
                 type="checkbox"
-                checked={checkVideoInPlaylist(play?._id)}
-                onChange={(e) => playListCheckHandler(play._id)}
+                checked={checkVideoInPlaylist(play?.videos)}
+                onChange={(e) => playListCheckHandler(e, play._id)}
               />
               {play.title}
             </label>

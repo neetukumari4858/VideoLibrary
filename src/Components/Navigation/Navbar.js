@@ -24,6 +24,11 @@ const Navbar = () => {
         <label className="logo">Royalplay</label>
       </div>
       <div className="nav-section">
+        <h3 className="explore_text">
+          <Link className="nav-link" to="/VideoListing">
+            Explore{' '}
+          </Link>
+        </h3>
         {token ? (
           <button className="login-btn text-color" onClick={logoutHandler}>
             Logout

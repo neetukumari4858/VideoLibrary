@@ -7,12 +7,17 @@ const deleteVideoFromPlaylist = async (
   PlayListDispatch
 ) => {
   try {
+    console.log(  _id,
+      playlistId,
+      token,
+      PlayListDispatch,"delete")
     const response = await axios.delete(
       `/api/user/playlists/${playlistId}/${_id}`,
       {
         headers: { authorization: token },
       }
     );
+    console.log(response,"re")
     PlayListDispatch({
       type: "REMOVE_VIDEO_FROM_PLAYLIST",
       payload: {

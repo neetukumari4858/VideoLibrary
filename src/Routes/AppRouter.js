@@ -19,9 +19,9 @@ const AppRouter = () => {
         <Route
           path="/"
           element={
-            <RequireAuth>
+            // <RequireAuth>
               <Home />
-            </RequireAuth>
+            // </RequireAuth>
           }
         />
         <Route path="/VideoListing" element={<VideoListing />} />
@@ -62,15 +62,15 @@ const AppRouter = () => {
           element={
             <RequireAuth>
               <SinglePlayList />
-            </RequireAuth>
+             </RequireAuth>
           }
         />
         <Route
           path="/VideoListing/:videoId"
           element={
-            <RequireAuth>
+            // <RequireAuth>
               <SingleVideo />
-            </RequireAuth>
+            // </RequireAuth>
           }
         />
         <Route path="/loginPage" element={<Login />} />

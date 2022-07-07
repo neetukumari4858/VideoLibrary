@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getSingleVideo } from "./../../services/index";
 import "./SingleVideo.css";
+import { useNavigate } from "react-router-dom";
 import {
   addToHistory,
   addToLike,
@@ -22,10 +23,12 @@ import { BsFillBookmarkFill } from "react-icons/bs";
 import { BsBookmark } from "react-icons/bs";
 import { RiPlayList2Fill } from "react-icons/ri";
 import { AiFillLike, AiOutlineLike } from "react-icons/ai";
+import {Sidebar} from "./../../Components/SidebarItems/Sidebar"
 
 const SingleVideo = () => {
   const [video, setVideo] = useState({});
   const { videoId } = useParams();
+  const navigate=useNavigate()
 
   const { HistoryDispatch } = useHistory();
   const { likedState, likedDispatch } = useLiked();
@@ -79,12 +82,14 @@ const SingleVideo = () => {
     addToHistory(video, token, HistoryDispatch);
   };
   return (
-    <div className="single_video-page">
+    <div className="inner-Body">
+        <Sidebar />
+      <div className="product-container">
       <div className="section ">
         <ReactPlayer
           className="Video_section"
-          width="65%"
-          height="90%"
+          width="75%"
+          height="68%"
           url={`https://www.youtube.com/embed/${video.youtubeId}`}
           controls={true}
           onStart={addToHistoryHandler}
@@ -139,6 +144,7 @@ const SingleVideo = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

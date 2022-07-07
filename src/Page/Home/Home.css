@@ -34,10 +34,49 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4.5rem;
+  margin-top: -2rem;
   justify-content: center;
 }
 
 .inner-Body {
   display: flex;
   background-color: var(--light-black-color);
+}
+@media screen and (max-width: 425px) {
+  .inner-Body {
+    display: block;
+  }
+  .sidebar {
+    display: flex;
+    height: 4rem;
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .header_text {
+    display: none;
+  }
+  .icon_size {
+    font-size: 1.5rem;
+  }
+  .cardFooter {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .login-btn {
+    position: relative;
+    left: -4.3rem;
+    top: 0.8rem;
+    height: 1.4rem;
+    width: 3rem;
+    background-color: var(--red-color);
+    border: none;
+    border-radius: 0.2rem;
+  }
+  .explore_text {
+    color: var(--white-color);
+    margin-top: 1rem;
+    margin-right: -3rem;
+    font-size: 1rem;
+  }
 }
