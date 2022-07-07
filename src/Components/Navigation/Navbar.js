@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <nav className="header">
       <div className="nav-section">
-        <label className="logo">Royalplay</label>
+        <Link className="logo" to="/VideoListing">Royalplay </Link>
       </div>
       <div className="nav-section">
         <h3 className="explore_text">
