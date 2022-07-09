@@ -28,11 +28,7 @@ const PlayListReducer = (playlistState, playlistAction) => {
     case 'REMOVE_VIDEO_FROM_PLAYLIST':
       return {
         ...playlistState,
-        playlists: newPlaylist(
-          playlistAction.payload.playlistId,
-          playlistState.playlists,
-          playlistAction.payload.playlistData,
-        ),
+        playlists: [playlistAction.payload],
       }
   }
 }

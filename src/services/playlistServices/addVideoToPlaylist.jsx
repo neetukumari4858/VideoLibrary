@@ -1,6 +1,11 @@
 import axios from "axios";
 
-const addVideoToPlaylist = async (playlistId, video, token, PlayListDispatch) => {
+const addVideoToPlaylist = async (
+  playlistId,
+  video,
+  token,
+  PlayListDispatch
+) => {
   try {
     const response = await axios.post(
       `/api/user/playlists/${playlistId}`,

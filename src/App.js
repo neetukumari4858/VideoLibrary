@@ -1,5 +1,5 @@
 import './App.css'
-import { Navbar, Sidebar } from './Components/index'
+import { Navbar } from './Components/index'
 import { AppRouter } from './Routes/AppRouter'
 import { Modal } from './Components/Modal/Modal'
 
@@ -28,7 +28,6 @@ function App() {
       {openCloseModal && <Modal />}
       <div className="App">
         <Navbar />
-        {/* <Sidebar /> */}
         <AppRouter />
       </div>
     </>

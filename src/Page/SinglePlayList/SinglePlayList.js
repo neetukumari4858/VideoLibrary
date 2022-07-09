@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { usePlayList, useAuth } from './../../Context/index'
-import {Sidebar} from "./../../Components/SidebarItems/Sidebar"
+import { Sidebar } from './../../Components/SidebarItems/Sidebar'
 import { useModal } from '../../Context/ModelContext'
 import {
   deleteVideoFromPlaylist,
@@ -12,10 +12,7 @@ import { useEffect } from 'react'
 const SinglePlayList = () => {
   const { PlayListDispatch } = usePlayList()
   const { playlistId } = useParams()
-  console.log(playlistId,"playlistid")
-  const {playlistVideo, setplaylistVideo}=useModal()
-  
-  // const [playlistVideo, setplaylistVideo] = useState(null)
+  const { playlistVideo, setplaylistVideo } = useModal()
 
   const { userDetail } = useAuth()
   const { token } = userDetail
