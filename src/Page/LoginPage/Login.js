@@ -46,7 +46,7 @@ const Login = () => {
   }
 
   return (
-    <div className="outer-Login-container">
+    <div className="inner-Body Login_inner_body">
       <div className="login-outer-container">
         <form className="login-content-container">
           <h2 className="Login-heading-two">Login</h2>

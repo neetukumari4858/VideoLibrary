@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import { Sidebar } from "../../Components";
 import "./Home.css";
 const Home = () => {
     return (
+        <div className="inner-Body">
+        <Sidebar/>
         <div className="Home-Page-container">
             <div className="home-img-container">
                 <img className="home-image" src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/2bbcfa99737217.5ef9be3dbb9a9.jpg" />
@@ -52,7 +55,9 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+                
             </div>
+        </div>
         </div>
     )
 }

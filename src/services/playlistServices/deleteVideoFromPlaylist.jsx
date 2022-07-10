@@ -13,11 +13,10 @@ const deleteVideoFromPlaylist = async (
         headers: { authorization: token },
       }
     );
+ 
     PlayListDispatch({
       type: "REMOVE_VIDEO_FROM_PLAYLIST",
-      payload: {
-        payload: response.data.playlist,
-      },
+      payload:  response.data.playlist,
     });
   } catch (error) {
     console.log(error);

@@ -1,55 +1,68 @@
 @import url("../../style.css");
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: var(--light-black-color);
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: var(--light-black-color);
+  width: 100%;
+  border-bottom: 1px solid var(--white-color);
+}
+.explore_text {
+  color: var(--white-color);
+  margin-top: 1rem;
+  margin-right: -3rem;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 .logo {
-    margin-left: 2rem;
-    margin-top: -1rem;
-    color: var(--red-color);
-    font-size: 1.8rem;
-    font-weight: bold;
+  margin-left: 2rem;
+  margin-top: 0.4rem;
+  color: var(--red-color);
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
 }
 .nav-section {
-    height: 3.7rem;
-    margin-top: 1rem;
+  height: 3.7rem;
+  display: flex;
+  margin-top: 1rem;
 }
 .search-bar {
-    height: 2rem;
-    width: 30rem;
-    border-radius: 0.2rem;
-    margin-top: 0.6rem;
-    border: none;
+  height: 2rem;
+  width: 30rem;
+  border-radius: 0.2rem;
+  margin-top: 0.6rem;
+  border: none;
 }
 .nav-link {
-    text-decoration: none;
-    color: var(--white-color);
-    font-weight: bolder;
+  text-decoration: none;
+  color: var(--white-color);
+  font-weight: bolder;
 }
 .outer-search-bar-div {
-    height: 2.8rem;
-    width: 23rem;
-    display: flex;
-    justify-content: center;
-    margin-right: 13rem;
-    overflow-y: hidden;
+  height: 2.8rem;
+  width: 23rem;
+  display: flex;
+  justify-content: center;
+  margin-right: 13rem;
+  overflow-y: hidden;
 }
 .login-btn {
-    position: relative;
-    left: -4rem;
-    bottom: -0.4rem;
-    padding: 0.5rem 1rem;
-    background-color: var(--red-color);
-    border: none;
-    border-radius: 0.2rem;
-
+  position: relative;
+  left: -11rem;
+  top: 0.8rem;
+  /* bottom: -0.1rem; */
+  height: 2rem;
+  width: 6rem;
+  /* padding: -rem 1rem; */
+  background-color: var(--red-color);
+  border: none;
+  border-radius: 0.2rem;
 }
-.text-color{
-    color: var(--white-color);
-    cursor: pointer;
+.text-color {
+  color: var(--white-color);
+  cursor: pointer;
 }

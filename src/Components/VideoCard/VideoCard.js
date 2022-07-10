@@ -6,6 +6,7 @@ import {
   useModal,
   useAuth,
 } from './../../Context/index'
+import { toast } from 'react-toastify'
 import {
   addToLike,
   deleteLiked,
@@ -45,7 +46,7 @@ const VideoCard = ({
       addToLike(selectedVideo, token, likedDispatch)
     } else {
       navigate('/loginPage')
-      alert('login first')
+      toast.error('login first')
     }
   }
 
@@ -59,7 +60,7 @@ const VideoCard = ({
       addToWatchLater(videos, token, watchlistDispatch)
     } else {
       navigate('/loginPage')
-      alert('login first')
+      toast.error('login first')
     }
   }
   const deleteWatchLaterHandler = () => {
@@ -77,8 +78,8 @@ const VideoCard = ({
         payload: { status: true, video: selectedVideo },
       })
     } else {
-      navigate('/LoginPage')
-      alert('login first')
+      navigate('/loginPage')
+      toast.error('login first')
     }
   }
 

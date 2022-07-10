@@ -1,37 +1,82 @@
 @import url("../../style.css");
-.home-image{
-    height: 20rem;
-    width: 59rem;
+.home-image {
+  height: 100%;
+  width: 85%;
 }
-.home-img-container{
-    height: 23rem;
-    width: 60rem;
+.home-img-container {
+  height: 23rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+.mustWatch {
+  color: var(--white-color);
+  text-align: center;
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 2rem;
+}
+.Home-Page-container {
+  height: 130vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-black-color);
+}
+.card-section {
+  height: 24rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4.5rem;
+  margin-top: -2rem;
+  justify-content: center;
+}
+
+.inner-Body {
+  display: flex;
+  background-color: var(--light-black-color);
+}
+@media screen and (max-width: 425px) {
+  .inner-Body {
+    display: block;
+  }
+  .sidebar {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 3rem;
-    margin-top: 2rem;
-}
-.mustWatch{
-    color: var(--white-color);
-    margin-left: 7rem;
-    margin-bottom: 2.3rem;
-    margin-top: -1rem;
-}
-.Home-Page-container{
-    height: 37.2rem;
-    width:67rem;
-    margin: -37.2rem 0 0 14rem;
-    background-color:var(--dark-black-color) ;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-.card-section{
-    height: 24rem;
-    width: 63rem;
-    margin-left: 1.2rem;
+    height: 4rem;
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .header_text {
+    display: none;
+  }
+  .icon_size {
+    font-size: 1.5rem;
+  }
+  .cardFooter {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem 3rem;
-    justify-content: center;
+  }
+
+  .login-btn {
+    position: relative;
+    left: -4.3rem;
+    top: 0.8rem;
+    height: 1.4rem;
+    width: 3rem;
+    background-color: var(--red-color);
+    border: none;
+    border-radius: 0.2rem;
+  }
+  .explore_text {
+    color: var(--white-color);
+    margin-top: 1rem;
+    margin-right: -3rem;
+    font-size: 1rem;
+  }
 }

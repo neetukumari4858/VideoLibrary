@@ -3,6 +3,7 @@ import { deleteLiked } from '../../services/index'
 import { useAuth, useLiked } from '../../Context/index'
 import { useNavigate } from 'react-router-dom'
 import { AiFillLike } from 'react-icons/ai'
+import {Sidebar} from "./../../Components/SidebarItems/Sidebar";
 
 const Liked = () => {
   const { likedState, likedDispatch } = useLiked()
@@ -15,7 +16,9 @@ const Liked = () => {
     deleteLiked(_id, token, likedDispatch)
   }
   return (
-    <div className="Liked-Page-container">
+    <div className="inner-Body">
+      <Sidebar/>
+      <div className="product-container">
       <h1 className="Liked">Liked Videos</h1>
       <div className="section">
         {likedVideos.map(
@@ -63,6 +66,7 @@ const Liked = () => {
             )
           },
         )}
+      </div>
       </div>
     </div>
   )

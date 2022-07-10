@@ -1,15 +1,25 @@
 @import url("../../style.css");
 
-.WatchList-Page-container{
-    height: 37rem;
-    width:67rem;
-    margin-left: 14rem;
-    margin-top: -38.5rem;
-    background-color:var(--dark-black-color);
+.WatchList-Page-container {
+  height: 37rem;
+  display: flex;
+  background-color: var(--light-black-color);
+  background-color: var(--dark-black-color);
 }
-.WatchLater{
-    color: var(--white-color);
-    text-align: center;
-    position: relative;
-    top: 2rem; 
+.WatchLater {
+  color: var(--white-color);
+  text-align: center;
+  position: relative;
+  top: 2rem;
+}
+
+.WatchLater_section {
+  height: 100vh;
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  justify-content: center;
+
 }

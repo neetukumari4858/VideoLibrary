@@ -2,6 +2,7 @@ import './VideoListing.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { VideoCard } from '../../Components/VideoCard/VideoCard'
+import { Sidebar } from '../../Components'
 
 const VideoListing = () => {
   const [productsData, setProductsData] = useState([])
@@ -16,6 +17,8 @@ const VideoListing = () => {
     getData()
   }, [])
   return (
+    <div className="inner-Body">
+    <Sidebar />
     <div className="product-container">
       <h1 className="trandingVideo">Tranding Videos</h1>
       <div className="section">
@@ -47,6 +50,7 @@ const VideoListing = () => {
           },
         )}
       </div>
+    </div>
     </div>
   )
 }

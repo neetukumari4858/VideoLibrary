@@ -82,7 +82,7 @@ const SignUp = () => {
   }
 
   return (
-    <div className="outer-Login-container">
+    <div className="inner-Body Login_inner_body">
       <div className="signup-container">
         <div className="login-content">
           <h2 className="signUp-heading">Sign up</h2>

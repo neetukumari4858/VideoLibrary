@@ -1,42 +1,37 @@
 @import "./../../style.css";
-.sidebar{
-    height: 37rem;
-    width: 14rem;
-    border: 1px solid var(--dark-black-color);
-    overflow: auto;
-    background-color: var(--light-black-color);
-    overflow-x: hidden;
+.sidebar {
+  height: 100vh;
+  width: 14rem;
+  overflow: auto;
+  background-color: var(--light-black-color);
+  overflow-x: hidden;
 }
-.sidebarItemsLink{
-    display:flex ;
-    width:  14rem;
-    text-decoration: none;
-    padding: 1rem;
-    flex-wrap: wrap;
-    font-size:1rem;
-    color: var(--white-color);
-    font-weight: bolder;
-    margin-top: 0.5rem ;
-    margin-left: 1rem;
+.sidebarItemsLink {
+  display: flex;
+  width: 14rem;
+  text-decoration: none;
+  padding: 1rem;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  color: var(--white-color);
+  font-weight: bolder;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
 }
-.sidebarItemsLink:hover{
-    background-color:var(--gray-text-color) ;
-}
-
-.material-icons,.fa,
-.fas{
-    display: flex;
-    margin-right: 1rem;
-    font-size: 1.2rem;
-    color: var(--white-color); 
-}
-.fa-home{
-    
-    position: relative;
-    left:0.1rem;
-    top: 0.1rem;
+.sidebarItemsLink:hover {
+  background-color: var(--gray-text-color);
 }
 
-
-
-
+.material-icons,
+.fa,
+.fas {
+  display: flex;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  color: var(--white-color);
+}
+.fa-home {
+  position: relative;
+  left: 0.1rem;
+  top: 0.1rem;
+}
